@@ -1,3 +1,3 @@
 # 等蛋微信小程序
 
-<img src="./images/saoyisao.png">
+<img src="./images/saoyisao.jpg">
