@@ -1,0 +1,90 @@
+<view class="input-need">
+  <label class="label">请输入参数</label>
+  <view>
+  <view class="row">
+    <view class="title">标的合约</view>
+    <input  style="flex:1;height:100rpx;  font-weight:bold;color:rgba(51,51,51,1);" placeholder-style="font-weight:lighter;color:#ccc;"  disabled="true" value="{{contractValue}}" />
+    <!-- <picker bindchange="bindContractChange" value="{{contactValue}}" range="{{contractList}}">
+     <input  style="flex:1;height:100rpx;  font-weight:bold;color:rgba(51,51,51,1);" placeholder-style="font-weight:lighter;color:#ccc;"  disabled="true" value="{{instrumentPrice}}"  placeholder="期货价格" />
+        <view class="picker" style="font-weight:bold;color:rgba(51,51,51,1);">
+          {{contractValue}}<image src="/images/rightArrow.png" class="right-arrow"/>
+        </view>
+    </picker> -->
+  </view>
+  <view class="row">
+    <view class="title">期货价格</view>
+    <input  style="flex:1;height:100rpx;  font-weight:bold;color:rgba(51,51,51,1);" placeholder-style="font-weight:lighter;color:#ccc;"  disabled="true" value="{{instrumentPrice}}" />
+    <label class="right-text">元/500公斤</label>
+  </view>
+  <view class="row">
+    <view class="title">执行价格</view>
+    <input type="number"  style="flex:1;height:100rpx;  font-weight:bold;color:rgba(51,51,51,1);" placeholder-style="font-weight:lighter;color:#ccc;" placeholder="请输入执行价格" maxlength="11" data-type="executionPrice" bind:input="onInput" bindblur="onBlur" value="{{executionPrice}}"/>
+    <label class="right-text">元/500公斤</label>
+  </view>
+  <view class="row">
+    <view class="title">计算日期</view>
+    <!-- <input type="number" style="flex:1;height:100rpx;" bind:input="onInput"/> -->
+    <picker mode="date" start="2000-01" end="{{maxSelectDateOne}}" bindchange="bindDateOneChange" key="1">
+        <view class="picker" style="font-weight:bold;color:rgba(51,51,51,1);">
+          <image src="/images/clender.png" class="clender"/>
+          {{dateOne}}
+        </view>
+      </picker>
+  </view>
+  <view class="row">
+    <view class="title">到期日期</view>
+    <!-- <input style="flex:1;height:100rpx;"  bind:input="onInput"/> -->
+    <picker mode="date" start="{{startCalculateDate}}" end="2030-09-01" bindchange="bindDateTwoChange" key="2">
+        <view class="picker" style="font-weight:bold;color:rgba(51,51,51,1);">
+          <image src="/images/clender.png" class="clender"/>
+          {{dateTwo}}
+        </view>
+      </picker>
+  </view>
+  <view class="row">
+    <view class="title">类型</view>
+    <picker bindchange="bindTypeChange"  range="{{typeList}}">
+        <view class="picker" style="font-weight:bold;color:rgba(51,51,51,1);">
+          {{typeValue.value}}<image src="/images/rightArrow.png" class="right-arrow"/>
+        </view>
+      </picker>
+  </view>
+  <view class="row">
+    <view class="title">无风险利率</view>
+    <input  style="flex:1;height:100rpx;  font-weight:bold;color:rgba(51,51,51,1);" placeholder-style="font-weight:lighter;color:#ccc;" placeholder="请输入无风险利率" maxlength="6" type="number"  value="3" data-type="noRisk" bind:input="onInput"  bindblur="onBlur"/>
+    <label slot="right-icon" class="right-text">%</label>
+  </view>
+  <view class="row">
+    <view class="title">年度波动率</view>
+    <input  style="flex:1;height:100rpx;  font-weight:bold;color:rgba(51,51,51,1);" placeholder-style="font-weight:lighter;color:#ccc;" type="number" data-type="yearSurge" maxlength="6" placeholder="请输入年度波动率"  bind:input="onInput" value="{{yearSurge}}"  bindblur="onBlur"/>
+    <label slot="right-icon" class="right-text">%</label>
+  </view>
+  </view>
+  <button class="submit bubble" bindtap="onSubmit" disabled="{{disabled}}" style="opacity: {{disabled ? 0.4 : 1}}; color: #fff;">开始计算</button>
+  <view class="remark"><span style="color: #EA5B28">*</span>免责声明：此期权计算器的计算结果在任何情况下并非本程序的投资建议，投资者应用不当，损失责任自负。</view>
+</view>
+<view class="result" wx:if="{{showResult}}">
+  <label class="compute-result">计算结果</label>
+  <ul>
+    <li class="result-li">
+      <label class="left">权利金</label>
+      <label class="middle">{{royalty}}</label>
+      <label class="right">元/500公斤</label>
+    </li>
+    <li class="result-li">
+      <label class="left">数量</label>
+      <input  style="color:{{amount < minAmount ? '#f00' : '#333333' }}; font-weight:bold;" placeholder="最低数量{{minAmount}}" type="number" value="{{amount}}" class="middle" bindinput="onAmount" maxlength="8"  placeholder-style="font-weight:lighter;color:#ccc;"/>
+      <label class="right">500公斤</label>
+    </li>
+    <li class="result-li">
+      <label class="left">名义本金</label>
+      <label class="middle">{{nominalPrincipal}}</label>
+      <label class="right">元</label>
+    </li>
+    <li class="result-li">
+      <label class="left">总权利金</label>
+      <label class="middle">{{totalRoyalty}}</label>
+      <label class="right">元</label>
+    </li>
+  </ul>
+</view>

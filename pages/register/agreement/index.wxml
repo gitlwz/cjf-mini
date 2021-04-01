@@ -1,0 +1,11 @@
+<navbar class="nav-bar-container" style='height:{{navH}}rpx;' parameter="{{navdata}}" />
+<view class="newsDetail">
+  <view class="wxParse-div">
+    <view class="wxParse-strong title">
+      等蛋小程序用户注册协议
+    </view>
+  </view>
+  <view class="conter" wx:for="{{content}}" wx:key="{index}">
+    <view class="wxParse-inline">{{item}}</view>
+  </view>
+</view>

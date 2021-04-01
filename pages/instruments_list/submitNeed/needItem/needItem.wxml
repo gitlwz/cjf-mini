@@ -1,0 +1,58 @@
+<!--pages/instruments_list/submitNeed/needItem/needItem.wxml-->
+<view class="item">
+  <view class="head">
+    <view class="status {{data.planStatus === '1' ? 'set' : 'unset'}}">
+    {{data.planStatus === '0' ? '方案待定制' :'方案已生成'}}
+    </view>
+    <view style="display:flex;align-items:center;"  bindtap="onDelete" data-id="{{data.id}}">
+      <image src="/images/delete.png" class="delete-img"></image>
+      <label>删除</label>
+    </view>
+  </view>
+  <view class="middle">
+    <view class="left">
+      <view class="title">保价价格</view>
+      <view class="priceValue">
+        <label class="dollor">¥</label>{{data.insurePrice}}<label class="unit">（元/500公斤）</label>
+      </view>
+    </view>
+    <view>
+      <label class="title">保价数量</label>
+      <label class="titleValue">{{data.insureVolume}}（500公斤）</label>
+      <view>
+        <label class="title">保价时间</label>
+        <label class="titleValue">{{data.insureDays}}（天）</label>
+      </view>
+    </view>
+  </view>
+  <view class="footer">
+    <view class="column">
+      <view class="columeName">需求编号</view>
+      <view>{{data.insureId}}</view>
+    </view>
+    <view class="column">
+      <view class="columeName">生成时间</view>
+      <view>{{data.createTime}}</view>
+    </view>
+    <view class="column">
+      <view class="columeName">保价对象</view>
+      <view>{{data.insureDirection}}</view>
+    </view>
+    <view class="column">
+      <view class="columeName">联系方式</view>
+      <view>{{data.contactWay}}</view>
+    </view>
+    <view class="column">
+      <view class="columeName">权利金</view>
+      <view>{{data.premium ? data.premium : '—'}}</view>
+    </view>
+    <view class="column">
+      <view class="columeName">总权利金</view>
+      <view>{{data.totalPremium ? data.totalPremium : '—' }}</view>
+    </view>
+    <view class="column">
+      <view class="columeName">推荐公司</view>
+      <view>{{data.recommendCompany ? data.recommendCompany : '—'}}</view>
+    </view>
+  </view>
+</view>

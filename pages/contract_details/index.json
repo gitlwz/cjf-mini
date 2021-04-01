@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "合同详情",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "list-view": "/components/fixed-list-view/list",
+    "contract-detail-item": "item/item",
+    "navbar": "/components/navbar/index"
+  }
+}

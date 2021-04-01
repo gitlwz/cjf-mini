@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "enablePullDownRefresh": false,
+  "pageOrientation": "landscape",
+  "usingComponents": {
+    "ff-canvas": "@antv/f2-canvas"
+  }
+}

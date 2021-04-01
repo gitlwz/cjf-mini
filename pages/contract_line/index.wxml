@@ -1,0 +1,26 @@
+<navbar class="nav-bar-container" style='height:{{navH}}rpx;' parameter="{{navdata}}" />
+<view class="line-container">
+  <view class="jam-filter">
+    <view class="area-selece-filter">
+      <view class="area-selece-filter-title">地点</view>
+      <picker data-pickname="address" bindchange="bindPickerChange" value="{{addressIndex}}" range="{{addressArray}}" range-key="name">
+        <view class="area-select-area">
+          <view class="area-select-area-name">{{addressArray[addressIndex].name}}</view>
+          <image class="area-filter-icon" src="../../images/arrow_down_instrument.jpg" />
+        </view>
+      </picker>
+    </view>
+    <group-date class="group-date-filter" id="group-date-contract" startDate="{{ contractChartParameters.startDate }}" endDate="{{ contractChartParameters.endDate }}" bind:handleDateChange="handDateChange" />
+    <image data-landscape="basic" bindtap="changeDirection" src="/images/land_scape.png" class="land-scape-image" />
+
+  </view>
+  <view class="contract-line">
+    <view class="line">
+      <ff-canvas wx:if='{{noData === 1}}' id="line-dom" canvas-id="line" opts="{{ opts }}"></ff-canvas>
+      <view class="no-data-container" wx:else>
+        <image src="/images/noContent.png" class="no-content"></image>
+        <view class="no-data">{{noData === 2 ? '该条件下无数据' : '接口异常,请联系管理员处理'}}</view>
+      </view>
+    </view>
+  </view>
+</view>

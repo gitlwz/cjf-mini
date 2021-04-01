@@ -1,0 +1,91 @@
+<!--pages/user_detail/index.wxml-->
+<navbar parameter="{{navdata}}" class="limitContent" style='height:{{navH}}rpx;'/>
+<!-- <view style='margin-top:{{navH}}rpx;'>
+
+</view> -->
+<view wx:if="{{showLimit === '0'}}" class="limitContent">
+  <view class="top">
+    <image src="{{backImg}}" class="backImg"></image>
+    <!-- <image src="../../images/wxylogo.png" class="wxyImg"></image>
+    <view class="tip">打造极致的交易乐趣</view> -->
+  </view>
+  <view class="introduce">
+    <view class="introduceTitle">无限易介绍</view>
+    <view class="introduceContent">无限易是上海量投网络科技有限公司开发的新一代交易终端，为机构投资者和职业交易员打造期货、期权交易客户端。无限易拥有先进的交易理念，将交易乐趣和交易效率完美结合在一起，能够大大提高胜率和盈利水平。</view>
+  </view>
+  <view class="headline" style="margin-top:-12rpx;">
+    <view class="headlinetop">
+      <view class="dotLeft"></view>
+      <view class="dotLeft"></view>
+      <view class="headLineTitle">适用账号</view>
+      <view class="dotRight"></view>
+      <view class="dotRight"></view>
+    </view>
+    <view class="headlinebottom">为专业客户提供服务</view>
+  </view>
+  <view style="width:100%;padding: 0 68rpx 0 40rpx;">
+    <view class="row">
+      <view class="rowLeft">期货账号</view>
+      <view class="rowRight" >股指期权</view>
+      <view class="rowRight">金融期货</view>
+    </view>
+    <view class="row">
+      <view class="rowLeft">普通证券账号</view>
+      <view class="rowRight" >商品期货</view>
+      <view class="rowRight">商品期权</view>
+    </view>
+    <view class="row">
+      <view class="rowLeft">股票期权账号</view>
+      <view class="rowRight">ETF</view>
+      <view class="rowRight">ETF期权</view>
+    </view>
+  </view>
+  <view class="headline">
+    <view class="headlinetop">
+      <view class="dotLeft"></view>
+      <view class="dotLeft"></view>
+      <view class="headLineTitle">五大场景</view>
+      <view class="dotRight"></view>
+      <view class="dotRight"></view>
+    </view>
+    <view class="headlinebottom">为专业客户提供服务</view>
+  </view>
+  <view wx:for="{{list}}" wx:key="index" class="listItem">
+    <view class="listImg" style="background:url({{item.url}});background-size:cover"></view>
+    <view class="right">
+      <view class="one">{{item.one}}</view>
+      <view class="two">{{item.two}}</view>
+      <view class="three">{{item.three}}</view>
+    </view>
+  </view>
+  <view class="headline">
+    <view class="headlinetop">
+      <view class="dotLeft"></view>
+      <view class="dotLeft"></view>
+      <view class="headLineTitle">适用群体</view>
+      <view class="dotRight"></view>
+      <view class="dotRight"></view>
+    </view>
+    <view class="headlinebottom">为专业客户提供服务</view>
+  </view>
+  <view class="bottom" style="background-image:url({{bottomImg}});background-size:cover">
+    <ul class="bottomUl">
+      <li class="li">专职投资人员， 交易时间较长  </li>
+      <li class="li">持仓周期较短， 交易频率较高  </li>
+      <li class="li">复杂套利策略， 精准执行困难  </li>
+      <li class="li">套保交易属性， 委托数量庞大  </li>
+      <li class="li">管理多个账号， 交易多个市场  </li>
+      <li class="li">数据统计分析， 获取动态数据  </li>
+      <li class="li">量化交易实现， Python语言接入</li>
+    </ul>
+  </view>
+</view>
+<view class="limitContent" wx:else>
+  <jd-rich-text articleInfo="{{ articleInfo }}" wx:if="{{!isLoading}}"></jd-rich-text>
+  <block wx:else>
+    <view class="loading-place-holder">
+      <van-loading size="24px" vertical color="#D0A16C" />
+      <view style="color:#D0A16C;margin-top:10rpx">加载中...</view>
+    </view>
+  </block>
+</view>

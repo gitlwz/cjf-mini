@@ -1,0 +1,32 @@
+<!--pages/upLoad/upLoad.wxml-->
+<navbar parameter="{{navdata}}" />
+<block wx:if="{{isLoading}}" style='margin-top:{{navH}}rpx;'>
+    <view class="loading-place-holder">
+      <van-loading size="24px" vertical color="#D0A16C" />
+      <view style="color:#D0A16C;margin-top:10rpx">加载中...</view>
+    </view>
+</block>
+<view wx:else style='margin-top:{{navH}}rpx;'>
+  <view class="ul">
+    <ul>
+    <li class="li" wx:for="{{list}}" wx:key="{{index}}">
+    <navigator url="../../pages/showInfo/showInfo?text={{item.text}}&imgUrl={{item.img}}&id={{index}}"  style="width: 100%;height:130rpx;position: absolute" wx:if="{{reLoad}}" hover-class="noshadow"></navigator> 
+      <lable class="text">{{item.text}}</lable>
+      <label class="button" bindtap="onTap" data-index="{{index}}" wx:if="{{item.img === null || item.img === ''}}">上传 </label>
+      <span wx:else class="right">
+        <image src="{{item.img}}"class="upload-img"/>
+        <!-- <navigator url="../../pages/showInfo/showInfo?text={{item.text}}&imgUrl={{item.img}}&id={{index}}" wx:if="{{reLoad}}"> -->
+          <view class="detail" wx:if="{{reLoad}}">
+          <image src="../../images/rightArrow.png" class="right-arrow" />
+          </view>
+        <!-- </navigator>   -->
+      </span>
+    </li>
+    </ul>
+  </view>
+  <button class="submit bubble" bindtap="onSubmit" wx:if="{{!reLoad}}" disabled="{{disabled}}" style="opacity: {{disabled ? 0.4 : 1}};color:#fff;">提交</button>
+</view>
+<view class="tip">
+  <image src="../../images/tip.png" class="tip-image" />
+  <text class="tip-text">支持扩展名jpg.png格式，2MB以内</text>
+</view>

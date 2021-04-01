@@ -1,0 +1,13 @@
+{
+  "navigationBarBackgroundColor": "#000000",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "tab": "vant-weapp/tab/index",
+    "tabs": "vant-weapp/tabs/index",
+    "list-view": "/components/list-view/list",
+    "recycleItem": "item/item",
+    "navbar": "/components/navbar/index"
+  }
+}

@@ -1,0 +1,2 @@
+<list-view list-class="list" list-height="{{listHeight}}" list-data="{{listData}}" generic:list-item="fusion-item" bind:loadData="loadData" is-loading="{{isLoading}}" is-refreshing="{{isRefreshing}}" _page-size="{{20}}" _page-count="{{pageCount}}" has-more="{{hasMore}}"
+  />

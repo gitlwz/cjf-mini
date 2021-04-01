@@ -1,0 +1,63 @@
+/* pages/register/register.wxss */
+.sendCode {
+  width: 160rpx;
+  height: 52rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(208, 161, 108, 1);
+  border-radius: 26rpx;
+  border: 1px solid rgba(208, 161, 108, 1);
+  text-align: center;
+  line-height: 52rpx;
+}
+.unCode{
+   width: 190rpx;
+  height: 52rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #cccccc;
+  border-radius: 26rpx;
+  border: 1px solid #cccccc;
+  text-align: center;
+  line-height: 52rpx;
+}
+.confirm{
+  height: 34rpx;
+  margin: 20rpx 0 60rpx;
+  display: flex;
+  align-items: center;
+}
+.checkBox{
+ transform: scale(0.7);
+ line-height: 70rpx;
+ position: relative;
+ left:-8rpx;
+}
+.accept{
+  font-size:24rpx;
+}
+.register-button {
+  width: 490rpx;
+  height: 80rpx;
+  background: linear-gradient(270deg, rgba(234, 207, 165, 1) 0%, rgba(208, 161, 108, 1) 100%);
+  border-radius: 40rpx;
+  color: #fff;
+  line-height: 80rpx;
+}
+.row{
+  display: flex;
+  align-items: center;
+  height: 110rpx;
+  justify-content: space-between;
+  border-bottom:1px solid #F2F6F7;
+}
+.title{
+font-size:32rpx;
+font-family:PingFangSC-Medium,PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+line-height:52rpx;
+width: 160rpx;
+}

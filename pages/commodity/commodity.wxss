@@ -1,0 +1,111 @@
+/**轮播图**/
+swiper{
+  width: 100%;
+  height: 610rpx;
+}
+swiper-item{
+  width: 100%; 
+  padding-top: 10rpx;  
+  background-color: gray;
+}
+ .slide-image{
+  width: 100%; 
+  height: 100%;
+} 
+.slide-image.active{
+  transform: scale(1.1);
+  transition:all .2s ease-in 0s;
+} 
+
+.commodity_detail_price_item {
+  width: 100%;
+  height: 80rpx;
+  margin-left: 0rpx;
+  margin-bottom: 0rpx;
+}
+
+.commodity_detail_price_container_item_table{
+  width: 100%;
+}
+
+.item_commodity_name {
+  width: 100%;
+  height: 100rpx;
+  align-items: center;
+  text-align: center;
+  background-color: #DCDCDC;
+  margin-top: 15rpx;
+}
+
+/**标题**/
+.commodity_detail_name_word{
+  width: 100%;
+  overflow:hidden; /**文字超出部分用...代替01**/
+  text-overflow:ellipsis; /**文字超出部分用...代替02**/
+  white-space:nowrap;/**文字超出部分用...代替03**/
+  display: inline-block;/**文字超出部分用...代替04**/
+  font-weight: 900;
+  font-size: 500;
+  text-align: left;
+  margin-top: 22rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  color:black;
+  align-items: center; /**子view垂直居中*/
+  vertical-align: center; /**垂直居中*/
+  justify-content: left; /**内容居中*/
+  flex-direction: row;
+}
+/**价格库存字体**/
+.commodity_detail_price_word{
+  width: 100%;
+  font-size: 30rpx;
+  color: #FFB6C1;
+   align-self: flex-end;
+
+}
+
+.commodity_detail_price_word_big{
+  width: 100%;
+  font-weight: 800;
+  font-size: 50rpx;
+  color: #FFB6C1;
+  align-self: flex-end;
+}
+
+
+
+
+
+
+.price_top {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+}
+
+.price_top_item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: end;
+  width: 50%;
+  height: 80rpx;
+}
+
+.price_container{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: end;
+}
+.price_container_item {
+  display: flex;
+  width: 50%;
+  height: 80rpx;
+  margin-bottom: 0px;
+  text-align: center;
+  background-color: gray;
+}

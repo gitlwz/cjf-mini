@@ -1,0 +1,44 @@
+<view class="contract-line">
+  <view class="line-container">
+    <view class="jam-filter">
+      <text class="line-title">基差曲线</text>
+      <view class="area-selece-filter area-selece-filter-left">
+        <view class="area-selece-filter-title">地点</view>
+        <picker class="select-picker-view" data-pickname="basicAddress" bindchange="bindPickerChange" value="{{basicAddressIndex}}" range="{{addressArray}}" range-key="name">
+          <view class="area-select-area">
+            <view class="area-select-area-name">{{addressArray[basicAddressIndex].name}}</view>
+            <image class="area-filter-icon" src="../../../images/arrow_down_instrument.jpg" />
+          </view>
+        </picker>
+      </view>
+      <view class="area-selece-filter">
+        <view class="area-selece-filter-title">期货合约</view>
+        <picker class="select-picker-view" data-pickname="deliverMonth" bindchange="bindPickerChange" value="{{deliveryMonthIndex}}" range="{{deliveryMonthArray}}" range-key="name">
+          <view class="area-select-area">
+            <view class="area-select-area-name">{{deliveryMonthArray[deliveryMonthIndex].name}}</view>
+            <image class="area-filter-icon" src="../../../images/arrow_down_instrument.jpg" />
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="line">
+      <ff-canvas wx:if='{{basicNoData === 1}}' id="line-dom-basic" canvas-id="line-basic" opts="{{ basicOpts }}"></ff-canvas>
+      <view class="no-data-container" wx:else>
+        <image src="/images/noContent.png" class="no-content"></image>
+        <view class="no-data">{{basicNoData === 2 ? '该条件下无数据' : '接口异常,请联系管理员处理'}}</view>
+      </view>
+    </view>
+       <view class="line-operate-class">
+      <group-date class="group-date-filter" isLandScape="true" startDate="{{ basicParameters.startDate }}" endDate="{{ basicParameters.endDate }}" id="group-date-basic" bind:handleDateChange="handDateChange" />
+      <!-- <view wx:if='{{!isFistPushPage}}' class="next-line-container" bindtap="preLineClicked">
+        <text class="next-text">上一个</text>
+      </view>
+      <view class="next-line-container" bindtap="nextLineClicked">
+        <text class="next-text">下一个</text>
+      </view> -->
+      <view class="close-line-button" bindtap="closeLineClicked">
+        <text class="close-button">x</text>
+      </view>
+    </view>
+  </view>
+</view>

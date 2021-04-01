@@ -1,0 +1,6 @@
+{ "navigationBarTitleText": "上传资料",
+  "usingComponents": {
+    "van-loading": "vant-weapp/loading/index",
+    "navbar": "/components/navbar/index"
+  }
+}

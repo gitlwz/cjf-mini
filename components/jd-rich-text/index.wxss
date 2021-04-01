@@ -1,0 +1,50 @@
+@import "../../wxParse/wxParse.wxss";
+
+page {
+  background-color: #fff !important;
+}
+
+.newsDetail {
+  padding-top: 20rpx;
+  padding-bottom:80rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  background-color: white;
+}
+.newsDetail .header{
+  height: 390rpx;
+  width: 100%;
+  border-radius: 16rpx;
+  margin-bottom: 30rpx;
+}
+.newsDetail .title {
+  font-size: 36rpx;
+  color: #282828;
+  font-weight: bold;
+  line-height: 1.5;
+}
+.slide-img{
+  height: 320rpx;
+  width: 100%;
+  border-radius: 16rpx;
+}
+.video{
+  width: 100%;
+  height: 100%;
+}
+.newsDetail .attr {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10rpx;
+  margin-bottom: 30rpx;
+  color: #999;
+  font-size: 24rpx;
+  height: 30rpx;
+}
+
+.newsDetail .conter {
+  font-size: 30rpx;
+  color: #333;
+  line-height: 1.7;
+}

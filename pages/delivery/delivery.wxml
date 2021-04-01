@@ -1,0 +1,61 @@
+<!--pages/delivery/delivery.wxml-->
+<navbar parameter="{{navdata}}" style="height: {{navH}}rpx;display: block;width: 100%;" />
+<view class="news-list">
+  <view class='nav'>
+    <view style="width:auto;overflow:hidden;" wx:for="{{navList}}" wx:key>
+      <view class='item {{active==item.id?"on":""}}' data-id="{{item.id}}" bindtap='tabSelect'>
+        <view>{{item.title}}</view>
+        <view class='line selected-color' wx:if='{{active==item.id}}'></view>
+        <view class='line' wx:else/>
+      </view>
+    </view>
+  </view>
+
+  <!--列表-->
+
+  <view class="knowledge" wx:if="{{active === 1 || active === 0 }}">
+    <view class="problem" wx:if="{{active===1}}">常见问题</view>
+    <!-- <view class="problem" wx:if="{{item.id === 2}}">问题</view> -->
+    <list-view  wx:for="{{navList}}" wx:key list-height="{{active === 1 ? listHeight - 45 : listHeight}}" data-id="{{item.id}}" vissable="{{active===item.id}}" list-data="{{navListdatas[item.id]}}" generic:list-item="delivery-item" bind:loadData="loadData" is-loading="{{navLoadingState[item.id]}}" is-refreshing="{{navRefreshingState[item.id]}}"
+      show-loading-footer="{{true}}" _page-size="{{13}}" _page-count="{{navPageCounts[item.id]}}" has-more="{{navHasMoreState[active]}}">
+    </list-view>
+  </view>
+  <scroll-view scroll-y="true"  wx:if="{{active === 2}}" style="width:100%;height:{{listHeight + 20}}px; padding-top: 20rpx;background-color:#f5f5f5">
+    <jd-rich-text articleInfo="{{flowContent}}"></jd-rich-text>
+  </scroll-view>
+  <view scroll-y="true"  wx:if="{{active === 3}}" style="width:100%;">
+    <view class="delivery-back">
+      <image src="{{http}}/root/1/delivery-back.png" class="back-img"></image>
+      <view class="welcome">欢迎体验模拟交割流程</view>
+      <view class="tip">
+        <span>全月每日选择交割 / 一次性交割 / 期转现交割</span>
+      </view>
+    </view>
+    <view class="bottom-content">
+      <navigator class="column-item" style="border-bottom: 1px solid #F2F6F7;" hover-class="none" url="/pages/simulatedDelivery/simulatedDelivery?type=oneDelivery">
+        <image src="../../images/preDay.png" class="column-item-img"></image>
+        <view class="column-item-center-content">
+          <view class="top-title">全月每日选择交割</view>
+          <view class="bottom-title">卖方主动提出，交易所进行匹配，交割月内每日均可现货交割。</view>
+        </view>
+        <view class="experience">立即体验</view>
+      </navigator>
+      <navigator class="column-item" style="border-bottom: 1px solid #F2F6F7;" hover-class="none" url="/pages/simulatedDelivery/simulatedDelivery?type=twoDelivery">
+        <image src="../../images/oneDelivery.png" class="column-item-img"></image>
+        <view class="column-item-center-content">
+          <view class="top-title">一次性交割</view>
+          <view class="bottom-title">交易所组织在合约最后交易日进行现货交割。</view>
+        </view>
+        <view class="experience">立即体验</view>
+      </navigator>
+      <navigator class="column-item" hover-class="none" url="/pages/simulatedDelivery/simulatedDelivery?type=threeDelivery">
+        <image src="../../images/crash.png" class="column-item-img"></image>
+        <view class="column-item-center-content">
+          <view class="top-title">期转现交割</view>
+          <view class="bottom-title">多空双方之间达成现货买卖协议，期货头寸转为现货交割。</view>
+        </view>
+        <view class="experience" >立即体验</view>
+      </navigator>
+    </view>
+  </view>
+</view>

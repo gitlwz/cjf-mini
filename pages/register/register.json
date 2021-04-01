@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "注册",
+  "usingComponents": {
+    "van-count-down": "../../miniprogram_npm/vant-weapp/count-down/index",
+    "navbar": "/components/navbar/index"
+  }
+}

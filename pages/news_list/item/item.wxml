@@ -1,0 +1,17 @@
+<!--template/recycle-view-list/item/item.wxml-->
+<navigator open-type="navigateTo" class="itemRecord" hover-stay-time="50" url="/pages/news_details/index?articleId={{itemData.id}}&articleType={{itemType}}">
+  <view class="content">
+    <view class="title">
+      {{itemData.title}}
+    </view>
+    <view class="bottom">
+      <view class="source" style="margin-right:12rpx;">
+        {{itemData.source}}
+      </view>
+      <view class="date">
+        {{itemData.publishTime}}
+      </view>
+    </view>
+  </view>
+  <image class="thumbnail" src="{{itemData.publishImage}}" mode="aspectFill" />
+</navigator>

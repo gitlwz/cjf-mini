@@ -1,0 +1,18 @@
+<view class="item" bindtap="onTap" style="background-image: url({{url}});background-size: contain">
+  <!-- <image src="../../../../images/eggback.png" class="eggback"></image> -->
+  <span class="item-title">{{itemData.productName}}</span>
+  <view style="margin-top:20rpx;">
+    <view class="row" style="width:230rpx;">
+      <view class="data">{{itemData.sevenDayAnnualRevenue}}<span style="font-size:36rpx">%</span></view>
+      <view class="name">七日年化收益率</view>
+    </view>
+    <view class="row last">
+      <view class="amount">{{itemData.deadline}}天</view>
+      <view class="name">期限</view>
+    </view>
+    <view class="row last">
+      <view class="amount">{{itemData.purchaseMoney}}万</view>
+      <view class="name">起购金额</view>
+    </view>
+  </view>
+</view>

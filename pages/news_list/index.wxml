@@ -1,0 +1,30 @@
+<navbar parameter="{{navdata}}" />
+<view class="news-list" style='margin-top:{{navH}}rpx;'>
+  <view class='nav'>
+    <scroll-view scroll-with-animation scroll-x style="width:auto;overflow:hidden;">
+      <block wx:for="{{navList}}" wx:key>
+        <view class='item {{active==item.id?"on":""}}' data-id="{{item.id}}" bindtap='tabSelect'>
+          <view>{{item.title}}</view>
+          <view class='line selected-color' wx:if='{{active==item.id}}'></view>
+          <view class='line' wx:else/>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+
+  <!--资讯列表-->
+  <view class="list">
+    <block wx:for="{{navList}}" wx:key>
+      <list-view list-height="{{listHeight}}" data-id="{{item.id}}" vissable="{{active===item.id}}" list-data="{{navListdatas[item.id]}}" generic:list-item="recycleItem" bind:loadData="loadData" is-loading="{{navLoadingState[item.id]}}" is-refreshing="{{navRefreshingState[item.id]}}" show-loading-footer="{{true}}"
+        _page-size="{{10}}" _page-count="{{navPageCounts[item.id]}}" has-more="{{navHasMoreState[active]}}">
+        <navigator slot="header" class="header" url="/pages/news_details/index?articleId={{navCoverDatas[item.id].id}}&articleType={{item.id}}" hover-stay-time="50">
+          <image src="{{navCoverDatas[item.id].url}}" mode="aspectFill"/>
+          <view wx:if="{{navCoverDatas[item.id].title}}" class="mask">
+            <view style="margin-left:30rpx;">{{navCoverDatas[item.id].title}}</view>
+          </view>
+        </navigator>
+      </list-view>
+    </block>
+  </view>
+
+</view>

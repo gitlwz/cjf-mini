@@ -1,0 +1,13 @@
+<!--component/clipImg.wxml-->
+<view class="clip">
+    <image class="head-img" style="width:{{cropperW}}rpx;height:{{cropperH}}rpx" src="{{imageUrl}}"></image>
+    <movable-area scale-area style="width:{{cropperW}}rpx;height:{{cropperH}}rpx">
+        <movable-view bindchange="move" bindscale="scale" direction="all" scale scale-min="0.5" scale-max="2.2" id="ui" animation="false">
+        </movable-view>
+    </movable-area>
+    
+</view>
+<view class="btn">
+  <text bindtap="cancel" class="bubble">取消</text>
+  <text bindtap="getImageInfo" class="bubble">确定</text>
+</view>

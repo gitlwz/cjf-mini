@@ -1,0 +1,97 @@
+page {
+  height: 100%;
+  background-color: #f5f5f5;
+}
+.contract-list {
+  width: 100%;
+  position: relative;
+}
+.contract-list .pop {
+  width: 100%;
+  height: calc(100% - 60rpx);
+  position: absolute;
+  top: 60rpx;
+  background: rgba(51, 51, 51, 0.3);
+}
+
+.contract-list .pop .pop-content {
+  width: 100%;
+  background: #fff;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+}
+
+.contract-list .pop .pop-item {
+  width: 100%;
+  color: #333;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  height: 79rpx;
+  background: #fff;
+  border-bottom: 1px solid #F2F6F7;
+}
+.no-content{
+  width: 340rpx;
+  height: 249rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+.no-data{
+  margin-top: 600rpx;
+  text-align: center;
+font-size:24rpx;
+font-weight:400;
+color:rgba(153,153,153,1);
+}
+.contract-list .filter-header {
+  width: 100%;
+  height: 60rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+}
+
+.contract-list .filter-header .item {
+  color: #333;
+  font-size: 24rpx;
+  margin:0 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.contract-list .filter-header .active {
+  color: #d0a16c;
+}
+
+.contract-list .filter-header .bg {
+  height: 44rpx;
+  padding-left: 12rpx;
+  padding-right: 12rpx;
+  background-color: #f2f6f7;
+  border-radius: 22rpx;
+}
+
+.contract-list .filter-header .item image {
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.contract-list .filter-header .item .title {
+  margin-left: 2rpx;
+  margin-right: 2rpx;
+}
+
+.contract-list .list {
+  width: 100%;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}

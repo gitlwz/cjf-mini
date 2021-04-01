@@ -1,0 +1,86 @@
+<navbar parameter="{{navdata}}" />
+<block wx:if="{{isLoading}}" style='margin-top:{{navH}}rpx;'>
+  <view class="loading-place-holder">
+    <van-loading size="24px" vertical color="#D0A16C" />
+    <view style="color:#D0A16C;margin-top:10rpx">加载中...</view>
+  </view>
+</block>
+<view class="contract-details" style='margin-top:{{navH}}rpx;height:1520rpx;background: #fff;' wx:else>
+  <view class="item">
+    <label class="name">合同类型</label>
+    <label class="value">{{listdata.contractStatus === '1' ? '已完成' : '未完成' }}</label>
+  </view>
+  <view class="item">
+    <label class="name">合同分类</label>
+    <label class="value">{{listdata.contractType}}</label>
+  </view>
+  <view class="item">
+    <label class="name">商品明细</label>
+    <label class="value">{{listdata.commodityType}}</label>
+  </view>
+  <view class="item">
+    <label class="name">品牌</label>
+    <label class="value">{{listdata.bandType}}</label>
+  </view>
+  <view class="item">
+    <label class="name">签订日期</label>
+    <label class="value">{{listdata.signDate}}</label>
+  </view>
+  <view class="item">
+    <label class="name">起始日期</label>
+    <label class="value">{{listdata.startDate}}至{{listdata.endDate}}</label>
+  </view>
+  <view class="item">
+    <label class="name">交货日期</label>
+    <label class="value">{{listdata.deliveryDate}}</label>
+  </view>
+  
+  <view class="item">
+    <label class="name">供应商名称</label>
+    <label class="value">{{listdata.supplierName}}</label>
+  </view>
+  <view class="item">
+    <label class="name">买方名称</label>
+    <label class="value">{{listdata.buyerName}}</label>
+  </view>
+  <view class="item">
+    <label class="name">买方联系人</label>
+    <label class="value">{{listdata.buyerLinkPerson}}</label>
+  </view>
+  <view class="item">
+    <label class="name">买方电话</label>
+    <label class="value">{{listdata.buyerMobile}}</label>
+  </view>
+  <view class="item">
+    <label class="name">供应商联系人</label>
+    <label class="value">{{listdata.supplierLinkPerson}}</label>
+  </view>
+  <view class="item">
+    <label class="name">供应商电话</label>
+    <label class="value">{{listdata.supplierMobile}}</label>
+  </view>
+  <view class="item">
+    <label class="name">责任部门</label>
+    <label class="value">{{listdata.qualityDept}}</label>
+  </view>
+  <view class="item">
+    <label class="name">合同金额</label>
+    <label class="value">¥{{listdata.contractMoney}}</label>
+  </view>
+  <view class="item">
+    <label class="name">合同数量</label>
+    <label class="value">{{listdata.contractVolume}}</label>
+  </view>
+  <view class="item">
+    <label class="name">单位报价</label>
+    <label class="value">¥{{listdata.quoteUnit}}</label>
+  </view>
+  <view class="item">
+    <label class="name">交货地点</label>
+    <label class="value">{{listdata.deliveryAddress}}</label>
+  </view>
+  <view class="item">
+    <label class="name">交货方式</label>
+    <label class="value">{{listdata.deliveryWay}}</label>
+  </view>
+</view>

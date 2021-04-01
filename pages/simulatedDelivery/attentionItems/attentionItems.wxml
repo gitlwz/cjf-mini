@@ -1,0 +1,21 @@
+<navbar parameter="{{navdata}}" style="height: {{navH}}rpx;display: block;width: 100%;" />
+
+
+<view style="height:{{contentH}}px" class="content-container" wx:if="{{vehicle}}">
+  <view class="items">
+     <view class="title">注意事项：</view>
+     <view class="tip">申请车板交割的卖方须需具有车板交割资格！</view>
+  </view>
+  <view class="items">
+     <view class="title">申请材料：</view>
+     <view class="tip">1.申请书</view>
+     <view class="tip">2.加盖单位公章的营业执照副本复印件；</view>
+     <view class="tip">3.1个指定车板交割场所或指定交割仓库提供的推荐信或2个具有车板交割资格的客户提供的推荐信</view>
+  </view>
+  <view class="items">
+     <view class="title">审核程序：</view>
+     <view class="tip">交易所收到完整的审核材料后3个交易日进行审核并通知会员，由会员转告客户</view>
+  </view>
+  <navigator class="back item" url="/pages/simulatedDelivery/simulatedDelivery?experience=vehicle">已阅读，去体验</navigator>
+</view>
+<flow3 items="{{item}}" adress="{{url}}" wx:else></flow3>

@@ -1,0 +1,64 @@
+<View class="contract-line">
+  <view class="line-container">
+    <view class="jam-filter">
+      <view class="area-selece-filter">
+        <view class="area-selece-filter-title">地点</view>
+        <picker bindchange="bindPickerChange" data-pickname="jamAddress" value="{{jamAddressIndex}}" range="{{jamAddressArray}}" range-key="name">
+          <view class="area-select-area">
+            <view class="area-select-area-name">{{jamAddressArray[jamAddressIndex].name}}</view>
+            <image class="area-filter-icon" src="../../../images/arrow_down_instrument.jpg" />
+          </view>
+        </picker>
+      </view>
+      <group-date class="group-date-filter" startDate="{{ jamParameters.startDate }}" endDate="{{ jamParameters.endDate }}" id="group-date-jam" bind:handleDateChange="handDateChange" />
+    </view>
+
+    <view class="line-top-container">
+      <view class="line-top-title-part">
+        <text class="line-title">拥堵指数</text>
+        <image data-landscape="jam" bindtap="changeDirection" src="/images/land_scape.png" class="land-scape-image" />
+      </view>
+    </view>
+    <view class="line-top-container line-top-container-border line-des-info">
+      <text>今日<text style="color: #f00">{{jamAddressArray[jamAddressIndex].name}}</text>拥堵指数:<text style="color: #f00">{{todayJamValue}}</text> 指数反映市场供应量较昨日{{todayJamChg > 0 ? '上升' : '下降' }}<text style="color: {{todayJamChg > 0 ? '#f00' : '#0f0'}}">{{todayJamChgAbs}}%</text></text>
+    </view>
+    <view class="line">
+      <ff-canvas wx:if='{{jamNoData === 1}}' id="line-dom-jam" canvas-id="line-jam" opts="{{ jamOpts }}"></ff-canvas>
+      <view class="no-data-container" wx:else>
+        <image src="/images/noContent.png" class="no-content"></image>
+        <view class="no-data">{{jamNoData === 2 ? '该条件下无数据' : '接口异常,请联系管理员处理'}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="line-container" style="margin-top: 10rpx;">
+    <view class="jam-filter">
+      <view class="area-selece-filter">
+        <view class="area-selece-filter-title">地点</view>
+        <picker bindchange="bindPickerChange" data-pickname="feedAddress" value="{{feedAddressIndex}}" range="{{feedAddressArray}}" range-key="name">
+          <view class="area-select-area">
+            <view class="area-select-area-name">{{feedAddressArray[feedAddressIndex].name}}</view>
+            <image class="area-filter-icon" src="../../../images/arrow_down_instrument.jpg" />
+          </view>
+        </picker>
+      </view>
+      <group-date class="group-date-filter" startDate="{{ feedParameters.startDate }}" endDate="{{ feedParameters.endDate }}" id="group-date-feed" bind:handleDateChange="handDateChange" />
+    </view>
+    <view class="line-top-container">
+      <view class="line-top-title-part">
+        <text class="line-title">饲情指数</text>
+        <image data-landscape="feed" bindtap="changeDirection" src="/images/land_scape.png" class="land-scape-image" />
+      </view>
+      <text class="line-des-info">注:黄色区域为产蛋适宜区</text>
+    </view>
+    <view class="line-top-container line-top-container-border line-des-info">
+      <text>今日<text style="color: #f00">{{feedAddressArray[feedAddressIndex].name}}</text>指数范围:<text style="color: #f00">{{todayFeedValue}}</text>,  指数数值越大，表示偏离产蛋适宜区越大</text>
+    </view>
+    <view class="line">
+      <ff-canvas wx:if='{{feedNoData === 1}}' id="line-dom-feed" canvas-id="line-feed" opts="{{ feedOpts }}"></ff-canvas>
+      <view class="no-data-container" wx:else>
+        <image src="/images/noContent.png" class="no-content"></image>
+        <view class="no-data">{{feedNoData === 2 ? '该条件下无数据' : '接口异常,请联系管理员处理'}}</view>
+      </view>
+    </view>
+  </view>
+</View>

@@ -1,0 +1,35 @@
+<view class="contract-line">
+  <view class="line-container">
+    <view class="jam-filter">
+      <text class="line-title">现货价格的稳定性分析</text>
+      <view class="area-selece-filter">
+        <view class="area-selece-filter-title">地点</view>
+        <picker data-pickname="stableAddress" bindchange="bindPickerChange" value="{{stableAddressIndex}}" range="{{addressArray}}" range-key="name">
+          <view class="area-select-area">
+            <view class="area-select-area-name">{{addressArray[stableAddressIndex].name}}</view>
+            <image class="area-filter-icon" src="../../../images/arrow_down_instrument.jpg" />
+          </view>
+        </picker>
+      </view>
+      <group-date class="group-date-filter" isLandScape="true" startDate="{{ stableParameters.startDate }}" endDate="{{ stableParameters.endDate }}" id="group-date-stable" bind:handleDateChange="handDateChange" />
+    </view>
+    <view class="line">
+      <ff-canvas wx:if='{{stableNoData === 1}}' id="line-dom-stable" canvas-id="line" opts="{{ stableOpts }}"></ff-canvas>
+      <view class="no-data-container" wx:else>
+        <image src="/images/noContent.png" class="no-content"></image>
+        <view class="no-data">{{stableNoData === 2 ? '该条件下无数据' : '接口异常,请联系管理员处理'}}</view>
+      </view>
+    </view>
+    <view class="line-operate-class">
+      <!-- <view wx:if='{{!isFistPushPage}}' class="next-line-container" bindtap="preLineClicked">
+        <text class="next-text">上一个</text>
+      </view>
+      <view class="next-line-container" bindtap="nextLineClicked">
+        <text class="next-text">下一个</text>
+      </view> -->
+      <view class="close-line-button" bindtap="closeLineClicked">
+        <text class="close-button">x</text>
+      </view>
+    </view>
+  </view>
+</view>

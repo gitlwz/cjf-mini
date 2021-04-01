@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "enablePullDownRefresh": false,
+  "pageOrientation": "landscape",
+  "usingComponents": {
+    "group-date": "../../instruments_list/smart_egg/component/group_date",
+    "ff-canvas": "@antv/f2-canvas"
+  }
+}

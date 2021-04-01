@@ -1,0 +1,12 @@
+{
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "navbar": "/components/navbar/index",
+    "tab": "vant-weapp/tab/index",
+    "tabs": "vant-weapp/tabs/index",
+    "list-view": "/components/list-view/list",
+    "recycleItem": "item/item"
+  },
+  "disableScroll": true
+}

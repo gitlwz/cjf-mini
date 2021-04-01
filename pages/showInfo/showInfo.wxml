@@ -1,0 +1,5 @@
+<!--pages/showInfo/showInfo.wxml-->
+<!-- <image src="{{img}}"/> -->
+<navbar parameter="{{navdata}}"  style='height:{{navH}}rpx;display: block;'/>
+<image src="{{img}}" class="img" />
+<button class="reLoad" bindtap="onClick">重新上传</button>

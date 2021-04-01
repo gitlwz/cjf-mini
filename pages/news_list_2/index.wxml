@@ -1,0 +1,22 @@
+<navbar parameter="{{navdata}}" />
+<view  style='margin-top:{{navH}}rpx;'>
+  <tabs custom-class="news-list-tabs" nav-class="news-list-navs" tab-class="news-list-s-tab" lazy-render="{true}" active="{{ active }}" bind:change="onChange">
+    <tab title="标签 1">
+      <view style="height: 400px">
+        <list-view list-data="{{listData}}" generic:list-item="recycleItem" bind:loadData="loadData" is-loading="{{isLoading}}" is-refreshing="{{isRefreshing}}" show-loading-footer="{{true}}" _page-size="{{50}}" _page-count="{{pageCount}}" has-more="{{hasMore}}"
+        />
+      </view>
+    </tab>
+    <tab title="标签 2">
+      <view style="height: 600px;background: green">
+
+      </view>
+    </tab>
+    <tab title="标签 3">
+      <view></view>
+    </tab>
+    <tab title="标签 4">
+      内容 4
+    </tab>
+  </tabs>
+</view>

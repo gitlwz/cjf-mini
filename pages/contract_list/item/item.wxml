@@ -1,0 +1,45 @@
+<!--template/recycle-view-list/item/item.wxml-->
+<navigator class="contract-item" url="/pages/contract_details/index?id={{data.id}}" open-type="navigateTo" hover-stay-time="50">
+  <view class="top-content">
+    <view style="display:flex;flex-dirution:row">
+      <image src="/images/contract.png" style="width:48rpx;height:48rpx;margin-right:12rpx" />
+      <view style="color:#333333;font-size:28rpx;font-weight:bold">
+        {{data.contractId}}
+      </view>
+    </view>
+    <view class="state {{data.contractStatus === '未完成' ? 'contract-state-not-complete' : '.contract-state-complete'}}">
+      {{data.contractStatus}}
+    </view>
+  </view>
+  <!-- <view class="split-line"></view> -->
+  <view class="bottom-content">
+    <view class="item">
+      <view class="name">
+        单位报价
+      </view>
+      <view class="value">
+        ¥{{data.quoteUnit}}
+      </view>
+    </view>
+    <view class="item">
+      <view class="name">
+        合同数量
+      </view>
+      <view class="value">
+        {{data.contractVolume}}
+      </view>
+    </view>
+    <view class="item">
+      <view class="name">
+        签订日期
+      </view>
+      <view class="value">
+       {{data.signDate}}
+      </view>
+    </view>
+  </view>
+  <view class="radius left-radius">
+  </view>
+  <view class="radius right-radius">
+  </view>
+</navigator>

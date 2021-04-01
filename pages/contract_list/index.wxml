@@ -1,0 +1,39 @@
+<navbar parameter="{{navdata}}" />
+<view class="contract-list"  style='margin-top:{{navH}}rpx;'>
+  <view class="filter-header">
+    <view class="item active" bindtap="switchContractType" data-type="contract">
+      <view class="title">合同类型</view>
+      <image src="/images/downS.png" />
+    </view>
+    <view class="item" bindtap="switchContractType" data-type="time" catchtap="onTime">
+      <view class="title">时间排序</view>
+      <image src="{{ timeUp === ''? '/images/sort.png' : (timeUp ? '/images/sort_up.png' : '/images/sort_down.png')}}" style="margin-top:4rpx;"/>
+    </view>
+    <view class="item" bindtap="switchContractType" data-type="money"  catchtap="onMoney">
+      <view class="title">金额排序</view>
+      <image src="{{ moneyUp === ''? '/images/sort.png' : (moneyUp ? '/images/sort_up.png' : '/images/sort_down.png')}}" style="margin-top:4rpx;"/>
+    </view>
+    <navigator class="item bg" url="/pages/contract_line/index" open-type="navigateTo" hover-stay-time="50">
+      <image src="/images/contract_history.png" />
+      <view class="title"> 历史合同</view>
+    </navigator>
+  </view>
+  <!--合同列表-->
+  <list-view list-class="list"  wx:if="{{login}}" list-height="{{listHeight}}" list-data="{{listData}}" generic:list-item="contract-item" bind:loadData="loadData" is-loading="{{isLoading}}" is-refreshing="{{isRefreshing}}" _page-size="{{20}}" _page-count="{{pageCount}}" has-more="{{hasMore}}"
+  />
+  <view class="pop" wx:if="{{showPop}}">
+    <view class="pop-content">
+      <block wx:for="{{contractStateList}}" wx:key="{{index}}">
+        <view class="pop-item" bindtap="onContractStatus" data-index="{{item.key}}">
+          {{item.text}}
+        </view>
+      </block>
+    </view>
+    <view style="height:100%;width:100%;" bindtap="switchContractType"  data-type="contract">
+    </view>
+  </view>
+</view>
+<view wx:if="{{!login}}">
+  <image src="/images/noContent.png" class="no-content"></image>
+  <view class="no-data">暂无数据</view>
+</view>

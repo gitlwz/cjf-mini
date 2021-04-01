@@ -1,0 +1,37 @@
+<!-- 定长数据列表，不支持滚动到底加载更多 -->
+<block wx:if="{{isRefreshing}}">
+  <view class="loading-place-holder">
+    <van-loading size="24px" vertical color="#D0A16C" />
+    <view style="color:#D0A16C;margin-top:10rpx">加载中...</view>
+  </view>
+</block>
+<block wx:else>
+  <!--list列表 -->
+  <block wx:if="{{listData.length !== 0}}">
+    <view class="fixed-list">
+      <block wx:for="{{listData}}" wx:key='index'>
+        <!--列表项抽象节点，提供外部自定义列表的能力,列表需要定义itemData属性接收数据-->
+        <fixed-list-item item-data="{{item}}" item-type="{{_id}}"/>
+      </block>
+      <!--下拉到底视图-->
+      <block wx:if="{{showFooter}}">
+        <view class="no-more-footer">
+          <text>--已全部加载完毕--</text>
+        </view>
+      </block>
+    </view>
+  </block>
+  <!--无数据视图-->
+  <block wx:elif="{{!isLoadFailed}}">
+    <view class="empty-content">
+      <image mode="aspectFit" src="/images/noContent.png"></image>
+      <text>暂无数据</text>
+    </view>
+  </block>
+  <block wx:else>
+   <view class="empty-content">
+      <image mode="aspectFit" src="/images/load_falied.png"></image>
+      <text>加载失败</text>
+    </view>
+  </block>
+</block>

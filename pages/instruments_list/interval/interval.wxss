@@ -1,0 +1,147 @@
+/* pages/instruments_list/interval/interval.wxss */
+.input-need {
+  width: 100%;
+  height: 1269rpx;
+  background: #fff;
+  padding: 30rpx 30rpx 0;
+}
+.right-arrow {
+  width: 28rpx;
+  height: 28rpx;
+  position: absolute;
+  right: 0rpx;
+}
+.label {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: rgba(51, 51, 51, 1);
+  line-height: 48rpx;
+  display: inline-block;
+margin-bottom: 10rpx;
+}
+.submit{
+  width:320rpx;
+  height:80rpx;
+  background:linear-gradient(270deg,rgba(234,207,165,1) 0%,rgba(208,161,108,1) 100%);
+  border-radius:40rpx;
+  line-height: 80rpx;
+  margin: 60rpx auto;
+  color:#fff;
+}
+.remark{
+  width:690rpx;
+height:110rpx;
+background:rgba(208,161,108,0.1);
+border-radius:6rpx;
+font-size:24rpx;
+padding: 15rpx 35rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:#333;
+line-height:40rpx;
+}
+.clender{
+  width:32rpx;
+height:32rpx;
+margin-right: 15rpx;
+}
+.picker{
+  width: 510rpx;
+  height: 100rpx;
+  display:flex;align-items:center;
+  position: relative;
+  color:#333;
+}
+.result{
+  width: 100%;
+  height: 550rpx;
+  background: #fff;
+  margin-top:20rpx;
+  padding: 30rpx 30rpx 0;
+}
+.compute-result{
+font-size:32rpx;
+font-family:PingFangSC-Medium,PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+}
+.result-li{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #DDDDDD;
+  position: relative;
+}
+.left{
+font-size:28rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(102,102,102,1);
+width: 114rpx;
+}
+.middle{
+font-size:28rpx;
+font-family:PingFangSC-Medium,PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+margin-left: 60rpx;
+}
+.right{
+  font-size:28rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(102,102,102,1);
+position: absolute;
+right: 0;
+}
+.contractOptions{
+  margin-left: 180rpx;
+  height: 100rpx;
+
+  line-height: 100rpx;
+  position: absolute;
+  top:194rpx;
+  z-index: 999;
+  background: #fff;
+}
+.option{
+border-bottom:1px solid #DDDDDD;
+
+}.row{
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  justify-content: space-between;
+  border-bottom:1px solid #F2F6F7;
+}
+.title{
+font-size:30rpx;
+font-family:PingFang SC;
+color:rgba(51,51,51,1);
+line-height:52rpx;
+width: 180rpx;
+}
+.bubble{
+ position: relative;
+ overflow: hidden;
+}
+.bubble:after{
+ content: "";
+ background: rgb(255, 255, 255);
+ position: absolute;
+ width: 750rpx;
+ height: 750rpx;
+ left: calc(50% - 375rpx);
+ top: calc(50% - 375rpx);
+ opacity: 0;
+ margin: auto;
+ border-radius: 50%;
+ transform: scale(1);
+ transition: all 0.6s ease-in-out;
+}
+.bubble:active:after {
+ transform: scale(0);
+ opacity: 1;
+ transition: 0s;
+}

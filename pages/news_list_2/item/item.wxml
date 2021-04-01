@@ -1,0 +1,4 @@
+<!--template/recycle-view-list/item/item.wxml-->
+<view class="itemRecord">
+ <text>{{itemData.title}}</text>
+</view>

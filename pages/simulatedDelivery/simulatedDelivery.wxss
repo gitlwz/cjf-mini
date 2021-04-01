@@ -1,0 +1,52 @@
+/* pages/simulatedDelivery/simulatedDelivery.wxss */
+.content-container{
+  background:#fff;
+  position:relative;
+}
+.item{
+position: absolute;
+width: fit-content;
+left:0;
+right: 0;
+margin:auto;
+}
+.title{
+font-size:42rpx;
+font-family:PingFangSC-Medium,PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+line-height:60rpx;
+top:130rpx;
+}
+.step{
+width:660rpx;
+height:110rpx;
+background:#F2F6F7;
+border-radius:80rpx;
+font-size:34rpx;
+font-family:PingFangSC-Medium,PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+line-height:110rpx;
+text-align: center;
+}
+.stepOne{
+  top:310rpx;
+}
+.stepTwo{
+  top:490rpx;
+}
+.back{
+  position: absolute;
+  bottom:40rpx;
+  width:670rpx;
+height:90rpx;
+background:#D0A16C;
+border-radius:16rpx;
+line-height:90rpx;
+text-align: center;
+font-size:32rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(255,255,255,1);
+}

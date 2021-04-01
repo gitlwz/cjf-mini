@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "历史合同",
+  "enablePullDownRefresh": false,
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+   "ff-canvas": "@antv/f2-canvas",
+   "group-date": "../instruments_list/smart_egg/component/group_date",
+   "navbar": "/components/navbar/index"
+  }
+}

@@ -1,0 +1,90 @@
+page {
+  background-color: #fff;
+  height: 100%;
+}
+
+.news-list {
+  background-color: #fff;
+  width: 100%;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-list .nav {
+  width: 100%;
+  white-space: nowrap;
+  box-sizing: border-box;
+  padding-bottom: 20rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.news-list .nav scroll-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.news-list .nav .item {
+  flex-grow: 1;
+  display: inline-block;
+  font-size: 28rpx;
+  color: #999;
+}
+
+.news-list .nav .item.on {
+  color: #333;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.news-list .nav .item~.item {
+  margin-left: 80rpx;
+}
+
+.news-list .nav .item .line {
+  width: 40rpx;
+  height: 8rpx;
+  border-radius: 4rpx;
+  margin: 10rpx auto 0 auto;
+}
+
+.news-list .selected-color {
+  background-color: #d0a16c;
+}
+
+.news-list .list {
+  width: 100%;
+}
+
+.news-list .list .header {
+  width: 100%;
+  height: 320rpx;
+  position: relative;
+}
+
+.news-list .list .header image {
+  width: 100%;
+  height: 100%;
+  border-radius: 16rpx;
+}
+
+.news-list .list .header .mask {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom-left-radius: 16rpx;
+  border-bottom-right-radius: 16rpx;
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: bold;
+  background: linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0.6) 100%);
+border-radius:0px 0px 16rpx 16rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

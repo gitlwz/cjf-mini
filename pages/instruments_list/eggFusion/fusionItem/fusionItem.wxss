@@ -1,0 +1,52 @@
+.item{
+  width:100%;
+height:260rpx;
+background:rgba(255,255,255,1);
+margin: 15rpx 0;
+padding: 34rpx 0 0 60rpx;
+position: relative;
+/* z-index: 888888; */
+}
+.item-title{
+font-size:28rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(51,51,51,1);
+}
+.data{
+font-size:60rpx;
+font-family:DINAlternate-Bold,DINAlternate;
+font-weight:bold;
+color:rgba(234,91,40,1);
+}
+.amount{
+font-size:28rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(51,51,51,1);
+}
+.name{
+font-size:24rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(153,153,153,1);
+}
+.row{
+  display: inline-block;
+}
+.last{
+  width: 200rpx;
+  border-left: 1px solid #F2F6F7;
+  text-align: center;
+}
+.amount{
+margin-bottom: 8rpx;
+}
+.eggback{
+  width: 100%;
+  height:260rpx;
+  position: absolute;
+  top: 0;
+right: 0;
+z-index: -1;
+}

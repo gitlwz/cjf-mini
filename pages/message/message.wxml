@@ -1,0 +1,50 @@
+<!--pages/message/message.wxml-->
+<navbar parameter="{{navdata}}" />
+<view style='margin-top:{{navH}}rpx;'>
+<!-- <van-cell-group >
+  <van-field
+    value="{{name}}"
+    label="姓名"
+    placeholder="请输入您的姓名"
+    bind:input="onInput"
+    data-type="name"
+    custom-style="height:100rpx;padding-top:30rpx;font-size: 32rpx;"
+  />
+  <van-field
+    value="{{tel}}"
+    clearable
+    label="电话"
+    placeholder="请输入您的电话"
+    bind:input="onInput"
+    data-type="tel"
+    custom-style="height:100rpx;padding-top:30rpx;font-size: 32rpx;"
+  >
+  </van-field>
+  <van-field
+    value="{{email}}"
+    label="邮箱"
+    placeholder="请输入您的邮箱"
+    bind:input="onInput"
+    data-type="email"
+    custom-style="height:100rpx;padding-top:30rpx;font-size: 32rpx;"
+  />
+</van-cell-group> -->
+<view style="padding: 0 30rpx;">
+  <view class="row">
+    <view class="title">姓名</view>
+    <input  style="flex:1;height:110rpx;" placeholder="请输入您的姓名" value="{{name}}" maxlength="10" data-type="name" bind:input="onInput"/>
+  </view>
+  <view class="row">
+    <view class="title">电话</view>
+    <input style="flex:1;height:110rpx;" placeholder="请输入您的电话" maxlength="11" value="{{tel}}" data-type="tel" bind:input="onInput"/>
+  </view>
+  <view class="row">
+    <view class="title">邮箱</view>
+    <input style="flex:1;height:110rpx;" placeholder="请输入您的邮箱" data-type="email" value="{{email}}" bind:input="onInput" maxlength='25'/>
+  </view>
+</view>
+<textarea placeholder="如您有任何建议或者疑问，都可以畅所欲言，不吐不快~" bind:input="onInput" data-type="message" maxlength="200" value="{{message}}">
+  <count class="count">{{count}}/200</count>
+</textarea>
+<button class="submit bubble" disabled="{{disabled}}" bindtap="onSubmit" style="opacity: {{disabled ? 0.4 : 1}};color:#fff;"> 提交 </button>
+</view>

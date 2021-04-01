@@ -1,0 +1,138 @@
+contract-container {
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.nav-bar-container{
+  display: block;
+    width: 100%;
+}
+
+
+.jam-filter{
+  display: flex;
+  /* width: 100%; */
+  justify-content: space-between;
+  margin: 16rpx 30rpx;
+  flex-direction: row;
+  align-items: center;
+}
+.area-selece-filter{
+  display: flex;
+  /* flex: 1; */
+  flex-direction: row;
+  align-items: center;
+}
+.area-selece-filter-title{
+  width:fit-content;
+  margin-right: 15rpx;
+  text-align: left;
+  font-size:24rpx;
+  color:#666666;
+  line-height:40px;
+}
+.area-select-area {
+  height: 56rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #f2f6f7;
+  border-radius: 4px;
+  justify-content: space-between;
+  margin-right: 20rpx;
+}
+.area-select-area-name{
+  font-size:24rpx;
+  color:#333333;
+  margin-left: 20rpx
+}
+.area-filter-icon{
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 20rpx;
+}
+
+.group-date-filter{
+  flex: 1;
+}
+
+
+
+.contract-line {
+  width: 100%;
+  height: 100%;
+}
+
+.contract-line .line {
+  width: 100%;
+  height: 600rpx;
+}
+
+.line-container {
+  background-color: #ffffff;
+  margin-top: 10rpx;
+  width: 100%;
+  height: 100%;
+}
+
+.line-title {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #333;
+  line-height: 44rpx;
+}
+
+.line-top-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+  margin: 0 30rpx;
+  border-bottom: 1rpx solid #DDDDDD
+}
+
+.line-legend-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.line-legend-line {
+  width: 20rpx;
+  height: 4rpx;
+}
+
+.line-legend-name {
+  font-size: 24rpx;
+  color: #333;
+  line-height: 36rpx;
+  margin-left: 8rpx;
+}
+
+.no-data-container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-content {
+  width: 340rpx;
+  height: 249rpx;
+}
+.no-data{
+  font-size:24rpx;
+  font-weight:400;
+  color:#999999;
+  line-height:40rpx;
+}
+
+.land-scape-image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 20rpx
+}

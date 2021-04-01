@@ -1,0 +1,2 @@
+<navbar parameter="{{navdata}}" style="height: {{navH}}rpx;display: block;width: 100%;" />
+<flow2 items="{{item}}"></flow2>

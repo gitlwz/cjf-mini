@@ -1,0 +1,44 @@
+<view style='height:{{listHeight}}px' class="list-container list-class" hidden="{{!vissable}}">
+  <block wx:if="{{isRefreshing}}">
+    <view class="loading-place-holder">
+      <van-loading size="24px" vertical color="#D0A16C" />
+      <view style="color:#D0A16C;margin-top:10rpx">加载中...</view>
+    </view>
+  </block>
+  <block wx:else>
+    <!--list列表 -->
+    <block wx:if="{{listData.length !== 0}}">
+    <!-- 一定要通过style动态设置scroll-view高度，否则不能触发滚动到底事件-->
+      <scroll-view style='height:{{listHeight}}px' scroll-y="true" bindscrolltolower="scrolltolower">
+        <view>
+          <slot name="header"></slot>
+          <block wx:for="{{listData}}" wx:key>
+            <!--列表项抽象节点，提供外部自定义列表的能力,列表需要定义itemData属性接收数据-->
+            <list-item item-data="{{item}}" item-type="{{_id}}"></list-item>
+          </block>
+          <!--底部加载视图-->
+          <block wx:if="{{showLoadingFooter && hasMore}}">
+            <view class="loading-footer2">
+              <van-loading size="14px" vertical color="#D0A16C" />
+              <view class="load-text">加载中...</view>
+            </view>
+          </block>
+          <!--下拉到底视图-->
+          <block wx:if="{{!hasMore}}">
+            <view class="no-more-footer">
+              <text>～已全部加载完毕～</text>
+            </view>
+          </block>
+          <slot name="footer"></slot>
+        </view>
+      </scroll-view>
+    </block>
+    <!--无数据视图-->
+    <block wx:else>
+      <view class="empty-content">
+        <image mode="aspectFit" src="/images/noContent.png"></image>
+        <text>暂无数据</text>
+      </view>
+    </block>
+  </block>
+</view>

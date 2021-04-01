@@ -1,0 +1,6 @@
+{"navigationBarTitleText": "留言",
+  "usingComponents": {
+    "van-field": "../../miniprogram_npm/vant-weapp/field/index",
+    "navbar": "/components/navbar/index"
+  }
+}

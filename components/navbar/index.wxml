@@ -1,0 +1,34 @@
+<view class='navbar' style='height:{{navH}}rpx;background:{{parameter.navbar==3 ? "transparent" : ""}}'>
+  <view class='navbarH' style='height:{{navH}}rpx;'>
+    <!-- <view class='navbarCon' wx:if='{{parameter.navbar==0}}'>
+      <view class='search'>
+        <text class='iconfont icon-xiazai5'></text>搜索内容</view>
+      <view class='logo'>
+        <image src='{{logoUrl}}'></image>
+      </view>
+    </view> -->
+    <!-- <view class='navbarCon' wx:if='{{parameter.navbar==1}}'>
+      <view class='name {{parameter.color==true?"on":""}}'>{{parameter.title}}</view>
+      <view class='iconfont icon-xiangzuo {{parameter.color==true?"on":""}}' wx:if='{{parameter.return==1}}' bindtap='return'></view>
+    </view> -->
+    
+    <view class='navbarCon'  style="height:{{titleH}}rpx;">
+      <view class="back-img" bindtap="navback">
+        <image style="width:48rpx;height:48rpx;position:absolute;left:15rpx;" src="/images/return.svg" wx:if='{{parameter.navbar==2 || parameter.navbar==3}}'/>
+      </view>
+      <view bindtap="changeType" class="center-tab" >
+         <view style="font-weight:bold;font-size:36rpx;width:fit-centent;background:{{parameter.navbar==3 ? '' : '#fff'}};color:{{parameter.navbar==3 ? '#fff' : ''}};margin:0 auto;display:flex;align-items:center;">
+        {{parameter.title}}
+        <image style="width:36rpx;height:36rpx;" src="/images/dropdown.png"  wx:if='{{parameter.navbar==0}}'/>
+        </view>
+      </view> 
+    </view>
+    <view class="tab" wx:if="{{tab && parameter.navbar==0}}" style='margin-top:{{navH}}rpx;'>
+      <view class="itemPackage">
+        <view class="tabItem {{itemOne ? 'item-active' : ''}}" bindtap="onTap" data-index="one">蛋价宝</view>
+        <view class="tabItem {{itemTwo ? 'item-active' : ''}}" bindtap="onTap" data-index="two">蛋融通</view>
+        <view class="tabItem {{itemThree ? 'item-active' : ''}}" bindtap="onTap" data-index="three">智慧蛋</view>
+      </view>
+    </view>
+  </view>
+</view>

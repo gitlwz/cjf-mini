@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-field": "/miniprogram_npm/vant-weapp/field/index",
+    "van-loading": "vant-weapp/loading/index",
+    "list-view": "/components/list-view/list",
+    "need-item": "./needItem/needItem"
+  }
+}

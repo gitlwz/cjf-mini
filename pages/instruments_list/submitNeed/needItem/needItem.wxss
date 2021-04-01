@@ -1,0 +1,93 @@
+/* pages/instruments_list/submitNeed/needItem/needItem.wxss */
+.item{
+  height:700rpx;
+  width: 100%;
+  padding: 0 40rpx;
+  box-shadow:0 0 20px 0 rgba(221,221,221,0.6);
+  background: #fff;
+  margin-bottom: 30rpx;
+
+}
+.head{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100rpx;
+  border-bottom: 1px dashed #CCCCCC;
+}  
+.status{
+  width:160rpx;
+height:44rpx;
+border-radius:22px;
+text-align: center;
+line-height: 44rpx;
+font-size:24rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+letter-spacing:1px; 
+}
+.unset{
+background:rgba(126,130,157,0.2);
+color:#7E829D;
+}
+.set{
+background:rgba(6,168,69,0.2);
+color:rgba(6,168,69,1);
+}
+.delete-img{
+  height: 48rpx;
+  width: 48rpx;
+  margin-right: 8rpx;
+}
+.middle{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height:145rpx;
+  width: 100%;
+  border-bottom: 1px dashed #CCCCCC;
+
+}
+.title{
+font-size:24rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(153,153,153,1);
+line-height:44rpx;
+}
+.priceValue{
+  color:#EA5B28;
+  font-weight: bold;
+  font-size: 36rpx;
+}
+.dollor{
+  font-weight: medium;
+  font-size: 28rpx;
+}
+.unit{
+  font-weight: medium;
+  font-size: 24rpx;
+}
+.column{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60rpx;
+  width: 100%;
+}
+.columnName{
+font-size:26rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(102,102,102,1);
+line-height:52rpx;
+letter-spacing:1px;
+}
+.footer{
+  padding-top: 20rpx;
+}
+.titleValue{
+  font-size:24rpx;
+  margin-left:6rpx;
+}

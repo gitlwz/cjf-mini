@@ -1,0 +1,9 @@
+<!--components/flow/flow.wxml-->
+<view style="height:{{contentH}}px;" class="content-container">
+  <view class="title item">{{item.title}}</view>
+  <navigator class="stepOne step item" url="{{item.stepOneUrl}}">{{item.stepOne}}</navigator>
+  <navigator class="stepTwo step item" url="{{item.stepTwoUrl}}">{{item.stepTwo}}</navigator>
+  <!-- <view class="stepOne step item" bindtap="onRedirect" data-type="top">{{item.stepOne}}</view>
+  <view class="stepTwo step item" bindtap="onRedirect" data-type="bottom">{{item.stepTwo}}</view> -->
+  <view class="back item" bindtap="onBack">返回上一页</view>
+</view>

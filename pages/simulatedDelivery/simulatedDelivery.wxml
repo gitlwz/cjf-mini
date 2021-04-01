@@ -1,0 +1,8 @@
+<navbar parameter="{{navdata}}" style="height: {{navH}}rpx;display: block;width: 100%;" />
+<!-- <view style="height:{{contentH}}px;" class="content-container">
+  <view class="title item">{{item.title}}</view>
+  <view class="stepOne step item" bindtap="onTop">{{item.stepOne}}</view>
+  <view class="stepTwo step item" bindtap="onBottom">{{item.stepTwo}}</view>
+  <view class="back item">返回上一页</view>
+</view> -->
+<flow item="{{item}}"></flow>

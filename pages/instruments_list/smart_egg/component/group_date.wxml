@@ -1,0 +1,14 @@
+  <view class="group-date-picker {{isLandScape && 'group-date-picker-landscape'}}">
+    <picker mode="date" value="{{startDate}}" class="group-date-picker-picker-container" start="{{limitStartDate}}" end="{{today}}" data-pickname="startDate" bindchange="handleDateChange">
+      <view class="group-date-picker-picker {{isLandScape && 'group-date-picker-picker-landscape'}}">
+        {{startDate}}
+      </view>
+    </picker>
+    <text>-</text>
+    <picker mode="date" value="{{endDate}}" class="group-date-picker-picker-container" start="{{startDate}}" end="{{today}}" data-pickname="endDate" bindchange="handleDateChange">
+      <view class="group-date-picker-picker {{isLandScape && 'group-date-picker-picker-landscape'}}">
+        {{endDate}}
+      </view>
+    </picker>
+    <image class="calender-icon {{isLandScape && 'calender-icon-landscape'}}" src="../../../../images/calender_nomal.jpg"/>
+  </view>

@@ -1,0 +1,113 @@
+<navbar parameter="{{navdata}}" />
+<view class="index" style='margin-top:{{navH}}rpx;'>
+  <view class="content">
+    <!-- 首页轮播 -->
+    <view class='index-bg'>
+      <swiper wx:if="{{imgUrls.length}}" indicator-dots="true" autoplay="true" interval="3000" duration="500" indicator-color="#D0A16C" indicator-active-color="#D0A16C" indicator-color="rgba(205,213,223,0.5)" >
+        <block wx:for="{{imgUrls}}" wx:key="index">
+          <swiper-item>
+            <view open-type="navigateTo" class='slide-navigator' hover-class='none'>
+              <image mode="aspectFill" src="{{item.imageUrl}}" class="slide-image" />
+            </view>
+          </swiper-item>
+        </block>
+      </swiper> 
+    </view>
+
+    <!-- 通知 -->
+    <view class='news' wx:if="{{notices.length}}">
+      <view class='pictrue'>
+        <image style="width:28rpx;height:28rpx;margin-right:10rpx" src="/images/notices.png" />
+        <text class="name">公告</text>
+      </view>
+      <view class='swiperTxt'>
+        <swiper autoplay="true" interval="2500" duration="500" vertical="true" circular="true">
+          <block wx:for="{{notices}}" wx:key="index">
+            <swiper-item catchtouchmove='catchTouchMove'>
+              <navigator url='/pages/news_details/index?articleId={{item.id}}&articleType=3' open-type="navigateTo" hover-class='none'>
+                <view class='text'>
+                  <view class='newsTitle'>{{item.title}}</view>
+                  <van-icon name="arrow" />
+                </view>
+              </navigator>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+
+    <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex"  bindscroll="scrollUp">
+          <view class="scroll-content" wx:for='{{companyList}}' wx:key="index" bindtap="toMarket">
+            <view class="row">
+              <view class="">{{item.companyName}}</view>
+              <view>
+                <label class="exercisePrice">标的价格</label>{{item.instrumentPrice}}
+              </view>
+            </view>
+            <view class="row" style="margin-top:18rpx;">
+              <view style="display:flex;align-items:center;">
+                <view class="instrument">合约</view>{{item.instrumentId}}
+              </view>
+              <view class="right-label">
+                <view class="call">看涨</view>
+                <view class="put">看跌</view>
+                <view class="maskOne"></view>
+                <view class="maskTwo"></view>
+              </view>
+            </view>
+          </view>  
+    </scroll-view>
+    <view class="indicator">
+      <view class="package">
+        <view class="items {{indexItem == 0 ? 'active' : ''}}"></view>
+        <view class="items {{indexItem == 1 ? 'active' : ''}}"></view>
+        <view class="items {{indexItem == 2 ? 'active' : ''}}"></view>
+      </view>
+    </view>
+    <!-- 指南 -->
+    <view class='guid-info-container'>
+      <navigator class="guide" hover-stay-time="50" url="/pages/delivery/delivery">
+          <image class="left" src="/images/undraw_post_online_dkuk.png"></image>
+          <view class="guide-text">
+            <text class="title">交割知识</text>
+            <text class="context">点击了解</text>
+          </view>
+        </navigator>
+        <view class="guide" hover-stay-time="50" bindtap='toSmartEgg'>
+          <image class="left" src="/images/undraw_report_mx0a.png"></image>
+          <view class="guide-text">
+            <text class="title">智慧蛋</text>
+            <text class="context">点击了解</text>
+          </view>
+        </view>
+    </view>
+  
+
+    </view>
+
+    <!-- 最新资讯 -->
+    <view class="content" style="margin-top: 20rpx;padding-top: 20rpx;">
+      <view class='nav' wx:if="{{navList.length > 0}}">
+        <scroll-view class="scroll-view_x" scroll-x scroll-with-animation style="width:auto;overflow:hidden;">
+          <block wx:for="{{navList}}" wx:key="index">
+            <!--使用data-自定义属性id，js中通过e.currentTarget.dataset.id取值-->
+            <view class='item {{active==item.id?"on":""}}' data-id="{{item.id}}" bindtap='tabSelect'>
+              <view>{{item.title}}</view>
+              <view class='line selected-color' wx:if='{{active==item.id}}'></view>
+              <view class='line' wx:else></view>
+            </view>
+          </block>
+        </scroll-view>
+        <navigator open-type="switchTab" class="more" url="/pages/news_list/index" hover-class="none">
+          <text style="color:#999999">更多</text>
+          <van-icon name="arrow" />
+        </navigator>
+      </view>
+      <!--资讯列表-->
+      <view class="list">
+        <fixed-list-view list-data="{{navListdatas[active]}}" generic:fixed-list-item="item" bind:loadData="loadData" is-refreshing="{{navRefreshingState[active]}}" is-load-failed="{{navListFailedState[active]}}" data-id="{{active}}" _id="{{active}}" />
+      </view>
+    </view>
+
+    <view class="footer">～我是有底线的啦～</view>
+    </view>

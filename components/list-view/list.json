@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-loading": "vant-weapp/loading/index"
+  },
+  "componentGenerics": {
+    "list-item": true
+  }
+}

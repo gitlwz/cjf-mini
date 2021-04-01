@@ -1,0 +1,60 @@
+@import '/app.wxss';
+
+.navbar {
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+}
+
+
+.navbar .navbarH .navbarCon {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.back-img{
+  width:170rpx;
+  height: 100%;
+  position:absolute;
+  left:0;display: flex;
+  align-items: center;
+}
+.center-tab{
+  width: 380rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 170rpx;
+  text-align: center;
+}
+.tab{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height:140rpx;
+  background: #fff;
+}
+.itemPackage{
+  width: 100%;
+  height:60rpx;
+  position: fixed;
+  display: flex;
+flex-direction: row;
+justify-content: space-around;
+}
+.tabItem{
+  width:210rpx;
+height:60rpx;
+background:rgba(244,244,244,1);
+border-radius:5px;
+line-height: 60rpx;
+text-align: center;
+color:rgba(102,102,102,1);
+font-size:28rpx;
+}
+.item-active{
+  color:rgba(208,161,108,1);
+}

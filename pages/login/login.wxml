@@ -1,0 +1,29 @@
+<!--pages/login/login.wxml-->
+<navbar parameter="{{navdata}}" />
+<view style='margin-top:{{navH}}rpx; padding: 0 30rpx;width: 100%;'>
+  <view>
+    <view class="row">
+      <view class="title">手机号码</view>
+      <input type="number" style="flex:1;height:110rpx;" placeholder="请输入有效手机号" maxlength="11" data-type="phone" bind:input="onInput" />
+    </view>
+    <view class="row">
+      <view class="title">密码</view>
+      <input type="password" style="flex:1;height:110rpx;" placeholder="请输入登录密码" maxlength="16" data-type="password" bind:input="onInput" />
+      <navigator class="forget" url="/pages/forget/forget">忘记密码?</navigator>
+    </view>
+    <view class="row">
+      <view class="title">验证码</view>
+      <input style="flex:1;height:110rpx;" placeholder="请输入验证码" data-type="code" bind:input="onInput" maxlength='4' />
+      <view style="height:108rpx;display:flex;align-items:center;" bindtap="getCode">
+        <canvas style="width:160rpx;height:70rpx;text-align: center;" canvas-id="canvas"></canvas>
+      </view>
+
+    </view>
+  </view>
+  <button class="login-button bubble" bindtap="onLogin" disabled="{{disabled}}" style="opacity: {{disabled ? '0.4' : '1'}};color:#fff;">登录</button>
+  <view class="login-tip">
+    <span>没有账号，去</span>
+    <navigator url="../register/register" class="login-register" hover-class="none">注册</navigator>
+  </view>
+
+</view>

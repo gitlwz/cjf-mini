@@ -1,0 +1,15 @@
+  <view class='newsDetail'>
+    <scroll-view  scroll-x="true" class='header' style=" white-space: nowrap; display: flex" wx:if="{{notice}}">
+      <video wx:if="{{articleInfo.publishVideo}}" src="{{articleInfo.publishVideo}}" class="video"></video>
+      <image wx:if="{{articleInfo.publishImage}}" src="{{articleInfo.publishImage}}" class="slide-img" />
+    </scroll-view>
+    <view class='title' wx:if="{{articleInfo.title}}">{{articleInfo.title}}</view>
+    <view class="attr" wx:if="{{articleInfo.publishTime && articleInfo.source}}">
+      <view wx:if="{{articleInfo.source}}">{{articleInfo.source}}</view>
+      <view wx:if="{{articleInfo.publishTime}}" style="margin-left:20rpx;">{{articleInfo.publishTime}}</view>
+    </view>
+    <view class='conter'>
+      <template is="wxParse" data="{{wxParseData:content.nodes}}" wx:if="{{articleInfo.publishContent}}"/>
+    </view>
+  </view>
+<import src="../../wxParse/wxParse.wxml" />

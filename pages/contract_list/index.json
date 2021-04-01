@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "合同管理",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "popup": "vant-weapp/popup/index",
+    "list-view": "/components/list-view/list",
+    "contract-item": "item/item",
+    "navbar": "/components/navbar/index"
+  }
+}

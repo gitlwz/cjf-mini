@@ -1,0 +1,28 @@
+<!--pages/delivery/deliveryItem/deliveryItem.wxml-->
+<navigator wx:if="{{itemType ===0}}" class="deliveryStore" url="/pages/delivery_detail/deliveryDetail?type={{itemType}}&name={{itemData.deliveryName}}&person={{itemData.contactPerson}}&mobile={{itemData.contactMobile}}&address={{itemData.detailAddress}}&id={{itemData.id}}" hover-class="noshadow">
+  <view class="storeName">
+    <image src="../../../images/store.png" class="storeImg"></image>
+    <view style="white-space: nowrap;overflow:hidden; text-overflow: ellipsis; flex:1;">{{itemData.deliveryName}}</view>
+    <view class="detail">详情</view>
+  </view>
+  <view class="row" style="margin-top:28rpx;">
+    <image src="../../../images/person.png" class="left-icon"></image>
+    <label class="label">{{itemData.contactPerson}}</label>
+  </view>
+  <view class="row">
+    <image src="../../../images/phone.png" class="left-icon"></image>
+    <label class="label">{{itemData.contactMobile}}</label>
+  </view>
+  <view class="row">
+    <image src="../../../images/adress.png" class="left-icon"></image>
+    <label class="label">{{itemData.address + itemData.detailAddress}}</label>
+  </view>
+</navigator>
+<navigator wx:if="{{itemType ===1}}" style="padding:0 30rpx;background:#fff;" url="/pages/delivery_detail/deliveryDetail?type={{itemType}}&id={{itemData.id}}">
+  <view class="deliveryKnowledge">
+    {{itemData.title}}
+  </view>
+</navigator>
+<view wx:if="{{itemType ===2}}" class="deliveryKnowledge">
+  {{itemData.title}}
+</view>

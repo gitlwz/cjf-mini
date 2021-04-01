@@ -1,0 +1,27 @@
+<!--长列表 batch属性必须配置为固定值batchSetRecycleData，id属性指定页面唯一值，height属性指定recycle-view的高度，默认为页面高度-->
+<navbar class="nav-bar-container" style='margin-top:{{navH}}rpx;' parameter="{{navdata}}" activityIndex="{{activityIndex}}" bind:reset="reset"/>
+<view class="news-list">
+  <view class="{{navdata.title !== '蛋融通' ? 'nav-package' : '' }}">
+  <view class='nav' wx:if="{{showTab}}" >
+    <view scroll-with-animation class="scroll-tab">
+      <block wx:for="{{tabContent}}" wx:for-index="bindex" wx:key="bindex">
+        <view class='item {{bindex===currentTab?"on":""}}' wx data-hi="{{item}}" data-id="{{bindex}}" bindtap='onChange'>
+          <view>{{item}}</view>
+          <view class='line selected-color' wx:if='{{bindex===currentTab}}'></view>
+          <view class='line' wx:else/>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+  <!--内容-->
+  <view class="list">
+   <interval wx:if="{{navdata.title === '蛋价宝' && currentTab == 'tabThree'}}"></interval>
+   <market-price wx:if="{{navdata.title === '蛋价宝' && currentTab == 'tabTwo'}}"></market-price>
+   <submit-need wx:if="{{navdata.title === '蛋价宝' && currentTab == 'tabOne'}}" bottom="{{toBottom}}" reflesh="{{reflesh}}"></submit-need>
+   <smart-egg wx:if="{{navdata.title === '智慧蛋' && currentTab == 'tabOne'}}"></smart-egg>
+   <smart-egg-price wx:if="{{navdata.title === '智慧蛋' && currentTab == 'tabTwo'}}"></smart-egg-price>
+   <smart-egg-limit wx:if="{{navdata.title === '智慧蛋' && currentTab == 'tabThree'}}"></smart-egg-limit>
+   <egg-fusion wx:if="{{navdata.title === '蛋融通'}}"></egg-fusion>
+  </view>
+</view>

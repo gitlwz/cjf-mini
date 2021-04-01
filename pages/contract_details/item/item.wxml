@@ -1,0 +1,4 @@
+<view class="contract-details-item">
+  <text class="attr-name">{{itemData.attrName}}</text>
+  <text class="attr-value">{{itemData.attrValue}}</text>
+</view>

@@ -1,0 +1,93 @@
+<view class="contract-line">
+  <view class="line-container">
+    <view class="jam-filter">
+      <view class="area-selece-filter area-selece-filter-left">
+        <view class="area-selece-filter-title">地点</view>
+        <picker class="select-picker-view" data-pickname="basicAddress" bindchange="bindPickerChange" value="{{basicAddressIndex}}" range="{{addressArray}}" range-key="name">
+          <view class="area-select-area">
+            <view class="area-select-area-name">{{addressArray[basicAddressIndex].name}}</view>
+            <image class="area-filter-icon" src="../../../../images/arrow_down_instrument.jpg" />
+          </view>
+        </picker>
+      </view>
+      <view class="area-selece-filter">
+        <view class="area-selece-filter-title">期货合约</view>
+        <picker class="select-picker-view" data-pickname="deliverMonth" bindchange="bindPickerChange" value="{{deliveryMonthIndex}}" range="{{deliveryMonthArray}}" range-key="name">
+          <view class="area-select-area">
+            <view class="area-select-area-name">{{deliveryMonthArray[deliveryMonthIndex].name}}</view>
+            <image class="area-filter-icon" src="../../../../images/arrow_down_instrument.jpg" />
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="jam-filter">
+      <group-date class="group-date-filter" startDate="{{ basicParameters.startDate }}" endDate="{{ basicParameters.endDate }}" id="group-date-basic" bind:handleDateChange="handDateChange" />
+    </view>
+    <view class="line-top-container">
+      <view class="line-top-title-part">
+        <text class="line-title">基差曲线</text>
+        <image data-landscape="basic" bindtap="changeDirection" src="/images/land_scape.png" class="land-scape-image" />
+      </view>
+      <view class="line-legend-parent-container">
+        <view class="line-legend-container" wx:for="{{priceLegend}}" wx:key="index">
+          <view class="line-legend-line" style="background-color:{{item.fill}};"></view>
+          <text class="line-legend-name">{{item.name}}</text>
+        </view>
+      </view>
+
+    </view>
+    <view class="line">
+      <ff-canvas wx:if='{{basicNoData === 1}}' id="line-dom-basic" canvas-id="line-basic" opts="{{ basicOpts }}"></ff-canvas>
+      <view class="no-data-container" wx:else>
+        <image src="/images/noContent.png" class="no-content"></image>
+        <view class="no-data">{{basicNoData === 2 ? '该条件下无数据' : '接口异常,请联系管理员处理'}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="line-container" style="margin-top: 10rpx;">
+    <view class="jam-filter">
+      <view class="area-selece-filter area-selece-filter-left">
+        <view class="area-selece-filter-title">地点</view>
+        <picker class="select-picker-view" data-pickname="delayAddress" bindchange="bindPickerChange" value="{{delayAddressIndex}}" range="{{addressArray}}" range-key="name">
+          <view class="area-select-area">
+            <view class="area-select-area-name">{{addressArray[delayAddressIndex].name}}</view>
+            <image class="area-filter-icon" src="../../../../images/arrow_down_instrument.jpg" />
+          </view>
+        </picker>
+      </view>
+      <view class="area-selece-filter">
+        <view class="area-selece-filter-title">滞后天数</view>
+        <picker class="select-picker-view" data-pickname="delayDays" bindchange="bindPickerChange" value="{{delayDaysIndex}}" range="{{delayDaysArray}}">
+          <view class="area-select-area">
+            <view class="area-select-area-name">{{delayDaysArray[delayDaysIndex]}}</view>
+            <image class="area-filter-icon" src="../../../../images/arrow_down_instrument.jpg" />
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="jam-filter">
+      <group-date class="group-date-filter" startDate="{{ delayParameters.startDate }}" endDate="{{ delayParameters.endDate }}" id="group-date-delay" bind:handleDateChange="handDateChange" />
+    </view>
+
+
+    <view class="line-top-container">
+      <view class="line-top-title-part">
+        <text class="line-title">滞后相关</text>
+        <image data-landscape="delay" bindtap="changeDirection" src="/images/land_scape.png" class="land-scape-image" />
+      </view>
+      <view class="line-legend-parent-container">
+        <view class="line-legend-container" wx:for="{{delayLegend}}" wx:key="index">
+          <view class="line-legend-line" style="background-color:{{item.fill}};"></view>
+          <text class="line-legend-name">{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="line">
+      <ff-canvas wx:if='{{delayNoData === 1}}' id="line-dom-delay" canvas-id="line-delay" opts="{{ delayOpts }}"></ff-canvas>
+      <view class="no-data-container" wx:else>
+        <image src="/images/noContent.png" class="no-content"></image>
+        <view class="no-data">{{delayNoData === 2 ? '该条件下无数据' : '接口异常,请联系管理员处理'}}</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,40 @@
+/* pages/simulatedDelivery/vehicleAttentionItems/vehicleAttentionItems.wxss */
+.content-container{
+  background:#fff;
+  position:relative;
+  margin-top: 12rpx;
+  padding: 0 40rpx;
+}
+.back{
+  position: absolute;
+  bottom:40rpx;
+  width:670rpx;
+height:90rpx;
+background:#D0A16C;
+border-radius:16rpx;
+line-height:90rpx;
+text-align: center;
+font-size:32rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(255,255,255,1);
+}
+.items{
+  padding: 50rpx 0;
+  border-bottom: 1px solid #F2F6F7;
+}
+.title{
+font-size:28rpx;
+font-family:PingFangSC-Medium,PingFang SC;
+font-weight:500;
+color:rgba(51,51,51,1);
+line-height:40rpx;
+margin-bottom: 20rpx;
+}
+.tip{
+font-size:26rpx;
+font-family:PingFangSC-Regular,PingFang SC;
+font-weight:400;
+color:rgba(85,85,85,1);
+line-height:42rpx;
+}

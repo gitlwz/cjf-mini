@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "navbar": "/components/navbar/index",
+    "jd-rich-text": "/components/jd-rich-text/index"
+  }
+}

@@ -1,0 +1,32 @@
+<view style="height:{{items.listHeight ? items.listHeight : contentH}}{{items.listHeight ? 'rpx' : 'px'}}" class="content-container">
+  <view class="title item" style="top: {{items.top}}rpx;">{{items.title}}</view>
+  <!-- <scroll-view scroll-y="true" style="height: 1000rpx;top: 160rpx;" wx:if="{{items.list.length > 5}}">
+    <block wx:for="{{items.list}}" wx:key="{{index}}" class="item listItem" style="">
+      <view class="index">0{{index + 1}}</view>
+      <view class="itemContent" wx:if="{{item.tip}}">
+        <label class="topContent">{{item.content}}</label>
+        <view class="bottomTip">{{item.tip}}</view>
+      </view>
+      <view class="itemContent" wx:else>{{item.content}}</view>
+      <view class="arrow"></view>
+    </block>
+  </scroll-view> -->
+  <view wx:for="{{items.list}}" wx:key="{{index}}" class="item listItem" style="top: {{item.top}}rpx;">
+      <view class="index">0{{index + 1}}</view>
+      <view class="itemContent" wx:if="{{item.tip}}">
+        <label class="topContent">{{item.content}}</label>
+        <view class="bottomTip">{{item.tip}}</view>
+      </view>
+      <view class="itemContent" wx:else>{{item.content}}</view>
+      <view class="arrow"></view>
+  </view>
+  <view class="back item" wx:if="{{items.back}}" bindtap="onBack">返回上一页</view>
+  <view class="nextStep item" wx:else>
+    <!-- <navigator class="step" wx:if="{{items.adressLeft}}" style="background:rgba(208,161,108,0.3);color:#A26542;" url="{{items.adressLeft}}">{{items.left}}</navigator>
+    <view wx:else class="step" style="background:rgba(208,161,108,0.3);color:#A26542;" bindtap="onBack">{{items.left}}</view>
+    <navigator class="step" style="background:rgba(208,161,108,1);font-size:{{items.long ? '30rpx' : '32rpx'}}" url="{{items.adressRight}}">{{items.right}}</navigator> -->
+    <view class="step" wx:if="{{items.adressLeft}}" style="background:rgba(208,161,108,0.3);color:#A26542;" bindtap="onRedirect" data-type="left">{{items.left}}</view>
+    <view wx:else class="step" style="background:rgba(208,161,108,0.3);color:#A26542;" bindtap="onBack">{{items.left}}</view>
+    <view class="step" style="background:rgba(208,161,108,1);font-size:{{items.long ? '30rpx' : '32rpx'}}" bindtap="onRedirect" data-type="right">{{items.right}}</view>
+  </view>
+</view>

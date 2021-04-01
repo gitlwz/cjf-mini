@@ -1,0 +1,9 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "navbar": "/components/navbar/index",
+    "van-icon": "vant-weapp/icon/index",
+    "fixed-list-view": "/components/fixed-list-view/list",
+    "item": "/pages/news_list/item/item"
+  }
+}

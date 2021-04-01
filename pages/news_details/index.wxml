@@ -1,0 +1,4 @@
+<navbar parameter="{{navdata}}" />
+<view style='margin-top:{{navH}}rpx;' >
+  <jd-rich-text articleInfo="{{ articleInfo }}"></jd-rich-text>
+</view>

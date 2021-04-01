@@ -1,0 +1,7 @@
+<view style="height:{{contentH}}px" class="content-container">
+  <view wx:for="{{items}}" wx:key="{{index}}" class="item listItem">
+    <view class="index">{{index + 1}}</view>
+    <view class="itemContent">{{item}}</view>
+  </view>
+  <navigator class="back item" url="{{adress}}">已阅读，去体验</navigator>
+</view>

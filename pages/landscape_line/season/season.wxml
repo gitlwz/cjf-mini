@@ -1,0 +1,52 @@
+<view class="contract-line">
+  <view class="line-container">
+    <view class="jam-filter">
+      <text class="line-title">期(现)货价格季节性分析</text>
+      <view class="area-selece-filter">
+        <view class="area-selece-filter-title">合约</view>
+        <picker data-pickname="chartType" bindchange="bindPickerChange" value="{{chartTypeIndex}}" range="{{chartTypeArray}}" range-key="name">
+          <view class="area-select-area">
+            <view class="area-select-area-name">{{chartTypeArray[chartTypeIndex].name}}</view>
+            <image class="area-filter-icon" src="../../../images/arrow_down_instrument.jpg" />
+          </view>
+        </picker>
+      </view>
+      <view class="area-selece-filter" wx:if='{{chartTypeIndex==0}}'>
+        <view class="area-selece-filter-title">地点</view>
+        <picker data-pickname="seasonAddress" bindchange="bindPickerChange" value="{{seasonAddressIndex}}" range="{{addressArray}}" range-key="name">
+          <view class="area-select-area">
+            <view class="area-select-area-name">{{addressArray[seasonAddressIndex].name}}</view>
+            <image class="area-filter-icon" src="../../../images/arrow_down_instrument.jpg" />
+          </view>
+        </picker>
+      </view>
+      <view class="area-selece-filter" wx:if='{{chartTypeIndex==1}}'>
+        <view class="area-selece-filter-title">交割月</view>
+        <picker data-pickname="deliverMonth" bindchange="bindPickerChange" value="{{deliveryMonthIndex}}" range="{{deliveryMonth}}" range-key="name">
+          <view class="area-select-area">
+            <view class="area-select-area-name">{{deliveryMonth[deliveryMonthIndex].name}}</view>
+            <image class="area-filter-icon" src="../../../images/arrow_down_instrument.jpg" />
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="line">
+      <ff-canvas wx:if='{{seasonNoData === 1}}'  id="line-dom-season" canvas-id="line2" opts="{{ seasonOpts }}"></ff-canvas>
+      <view class="no-data-container" wx:else>
+        <image src="/images/noContent.png" class="no-content"></image>
+        <view class="no-data">{{seasonNoData === 2 ? '该条件下无数据' : '接口异常,请联系管理员处理'}}</view>
+      </view>
+    </view>
+    <view class="line-operate-class">
+      <!-- <view wx:if='{{!isFistPushPage}}' class="next-line-container" bindtap="preLineClicked">
+        <text class="next-text">上一个</text>
+      </view>
+      <view class="next-line-container" bindtap="nextLineClicked">
+        <text class="next-text">下一个</text>
+      </view> -->
+      <view class="close-line-button" bindtap="closeLineClicked">
+        <text class="close-button">x</text>
+      </view>
+    </view>
+  </view>
+</view>

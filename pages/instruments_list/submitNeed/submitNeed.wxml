@@ -1,0 +1,73 @@
+<!--pages/instruments_list/eggPrice/eggPrice.wxml-->
+<view class="input-need">
+  <label class="label">请输入保价需求</label>
+  <view>
+    <view class="row">
+      <view class="title">保价对象</view>
+      <picker bindchange="bindObjectChange" value="{{objectValue}}" slot="button" range="{{list}}">
+        <view class="picker" style="font-weight:bold;color:rgba(51,51,51,1);">
+          {{objectValue}}
+          <image src="/images/rightArrow.png" class="right-arrow" />
+        </view>
+      </picker>
+    </view>
+    <view class="row">
+      <view class="title">保价价格</view>
+      <input style="flex:1;height:100rpx;  font-weight:bold;color:rgba(51,51,51,1);" placeholder-style="font-weight:lighter;color:#ccc;" placeholder="请输入保价价格" type="number" data-type="price" bind:input="onInput" bindblur="onBlur" value="{{price}}" maxlength="11" />
+      <label class="right-text">元/500公斤</label>
+    </view>
+    <view class="row">
+      <view class="title">保价数量</view>
+      <input type="number"  style="flex:1;height:100rpx;  font-weight:bold;color:rgba(51,51,51,1);" placeholder-style="font-weight:lighter;color:#ccc;"  maxlength="8" placeholder="请输入保价数量" data-type="amount" bind:input="onInput" value="{{amount}}" />
+      <label class="right-text">500公斤</label>
+    </view>
+    <view class="row">
+      <view class="title">保价时间</view>
+      <input type="number"  style="flex:1;height:100rpx;font-weight:bold;color:#333333}}" placeholder-style="font-weight:lighter;color:#ccc;"  maxlength="4" placeholder="请输入天数" data-type="time" bind:input="onInput" value="{{time}}" />
+      <label class="right-text">天</label>
+    </view>
+    <view class="row">
+      <view class="title">联系方式</view>
+      <input style="flex:1;height:100rpx;  font-weight:bold;color:rgba(51,51,51,1);" placeholder-style="font-weight:lighter;color:#ccc;" type="number" maxlength="11" placeholder="请输入联系方式" value="{{contact}}" data-type="contact" bind:input="onInput" />
+    </view>
+  </view>
+  <button class="submit bubble" bindtap="onSubmit" disabled="{{disabled}}" style="opacity: {{disabled ? 0.4 : 1}}; color: #fff;">提交需求</button>
+</view>
+<view class='my-need'>
+  <view class="label">我的保价需求</view>
+  <!--需求列表-->
+  <view wx:if="{{login}}">
+    <block wx:if="{{isLoading}}">
+      <view class="loading-place-holder">
+        <van-loading size="24px" vertical color="#D0A16C" />
+        <view style="color:#D0A16C;margin-top:10rpx">加载中...</view>
+      </view>
+    </block>
+    <view wx:else>
+      <view wx:if="{{listData.length !== 0}}">
+        <need-item wx:for="{{listData}}" item-data="{{item}}" wx:key="{{index}}" bind:reload="reload"></need-item>
+        <!--底部加载视图-->
+        <block wx:if="{{hasMore}}">
+          <view class="loading-footer2">
+            <van-loading size="14px" vertical color="#D0A16C" />
+            <view class="load-text">加载中...</view>
+          </view>
+        </block>
+        <!--下拉到底视图-->
+        <block wx:if="{{!hasMore}}">
+          <view class="no-more-footer">
+            <text>～已全部加载完毕～</text>
+          </view>
+        </block>
+      </view>
+      <view wx:else>
+        <image src="/images/noContent.png" class="no-content"></image>
+        <view class="no-data">暂无数据</view>
+      </view>
+    </view>
+  </view>
+  <view wx:else>
+    <image src="/images/noContent.png" class="no-content"></image>
+    <view class="no-data">暂无数据</view>
+  </view>
+</view>

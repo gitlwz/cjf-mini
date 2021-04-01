@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "group-date": "../component/group_date",
+    "ff-canvas": "@antv/f2-canvas"
+  }
+}

@@ -1,0 +1,120 @@
+.contract-item {
+  height: 310rpx;
+  margin-top: 20rpx;
+  border-radius: 8rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  position: relative;
+    padding:0 40rpx;
+  /* background: 
+  radial-gradient(circle at 0px 100rpx, transparent 10px, red 0) top;
+  filter: drop-shadow(3px 3px 3px rgba(0,0,0,.3)) */
+}
+
+.contract-item image {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.contract-item .split-line {
+  position: relative;
+  height: 60rpx;
+  background: red;
+}
+
+.contract-item .split-line:before, .contract-item .split-line:after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 8px;
+  /* background: #eee; */
+  background: black;
+  left: -9px;
+  z-index: 1000;
+}
+
+.contract-item .split-line::after {
+  border-radius: 8px 8px 0 0;
+  right: 0;
+  transform: rotate(90deg)
+}
+
+.contract-item .split-line::before {
+  border-radius: 0 0 8px 8px;
+  bottom: 0;
+}
+
+.contract-item .top-content {
+
+  width: 610rpx;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px dashed #F2F6F7;
+}
+
+.contract-item .bottom-content {
+  width: 610rpx;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.contract-item .bottom-content .item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5rpx;
+}
+
+.contract-item .bottom-content .item .name {
+  color: #666;
+  font-size: 26rpx;
+  line-height: 52rpx;
+
+}
+
+.contract-item .bottom-content .item .value {
+  color: #333;
+  font-weight: bold;
+  font-size: 26rpx;
+}
+
+.contract-item .state {
+  width: 100rpx;
+  height: 42rpx;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 21rpx;
+}
+
+.contract-state-not-complete {
+  background: rgba(255, 112, 0, 0.1);
+  color: rgba(255, 112, 0, 1);
+}
+
+.contract-state-complete {
+  background-color: rgba(52, 169, 92, 0.1);
+  color: rgba(52, 169, 92, 1);
+}
+.radius{
+  width:40rpx;
+  height:40rpx;
+  border-radius:50%;
+  background: #f5f5f5;
+  position: absolute;
+  top: 80rpx;
+}
+.left-radius{
+  left: -20rpx;
+}
+.right-radius{
+  right: -20rpx;
+}

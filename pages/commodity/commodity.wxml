@@ -1,0 +1,20 @@
+<view>
+<view class="item_commodity_name">
+    <label class="commodity_detail_name_word">{{fzCommodity.name}}</label>
+</view>
+<view class="price_top">
+    <view class="price_top_item">
+        <view class="price_container">
+            <view class="price_container_item">
+                <span class="commodity_detail_price_word">活动价: </span>
+            </view>
+            <view class="price_container_item" style="text-align:left;">
+                <span class="commodity_detail_price_word_big">￥50</span>
+            </view>
+        </view>
+    </view>
+    <view class="price_top_item">
+        <span class="commodity_detail_price_word" style="text-align:right;">库存: 100</span>
+    </view>
+    </view>
+        </view>

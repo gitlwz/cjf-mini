@@ -1,0 +1,67 @@
+<view class="content">
+  <view wx:if="{{upImg}}" style="position:fixed;width:100%;height:100%;background:rgba(51,51,51,0.4);z-index: 9999999;">
+    <view style="background:#fff;;padding:30rpx 30rpx  26rpx;">
+      <view class="nav-head">
+        <label>全部公司</label>
+      </view>
+      <ul>
+        <li wx:for="{{exchangeType}}" wx:key="{{index}}" class="li up-li {{indexLi === index ? 'active' : ''}}" data-index="{{index}}" bindtap="onLi">
+          {{item}}
+        </li>
+      </ul>
+    </view>
+    <view style="width:100%;height:100%;" bindtap="onImg"></view>
+  </view>
+
+  <view style="background: #fff;padding:30rpx 30rpx 26rpx;width:100%;">
+    <ul>
+    <scroll-view scroll-into-view="{{'li' + indexLi}}"  scroll-x="true" style=" white-space: nowrap; display: flex">
+      <li wx:for="{{exchangeType}}" id="{{'li' + index}}" wx:key="{{index}}" class="li {{indexLi === index ? 'active' : ''}}" data-index="{{index}}" bindtap="onLi">
+        {{item}}
+      </li>
+    </scroll-view>
+    </ul>
+  </view>
+  <view bindtap="onImg" class="{{upImg ? 'img-up-package' : 'img-down-package'}}">
+    <image src="{{upImg ? '/images/arrow-up.png' : '/images/arrow-down.png'}}" class="{{upImg ? 'nav-up-img' : 'nav-img'}}" style="width:38rpx;height:38rpx;"></image>
+  </view>
+
+  <view style="padding: 0 30rpx 26rpx;">
+    <view class="priceInfo">
+      报价信息
+    </view>
+    <view class="table-content">
+      <view class="table-title">
+        <view style="flex:1;">
+          <label class="title">合约: {{instrumentId}}</label>
+          <label class="line"></label>
+          <label class="title">期限: 30天</label>
+        </view>
+        <image src="/images/clock.png" style="width:30rpx; height:30rpx;margin-right: 10rpx;" />
+        <label class="time">{{time|| ''}}</label>
+      </view>
+      <view class="spans">
+        <span class="span" style="width:255rpx;background:rgba(234,91,40,1);">看涨</span>
+        <span class="span" style="width:160rpx;background:rgba(239,241,243,1);color:#333;">{{instrumentPrice || ''}}</span>
+        <span class="span" style="width:255rpx;background:rgba(3,195,137,1);">看跌</span>
+      </view>
+      <view class="data-table">
+        <view class="thead">
+          <view>买价</view>
+          <view>卖价</view>
+          <view>行权价</view>
+          <view>买价</view>
+          <view>卖价</view>
+        </view>
+        <view class="tbody item{{index}}" wx:for="{{data}}" wx:key="index">
+          <view class="price price0" style="">{{item.callBuyPrice}}</view>
+          <view class="price price1" style="">{{item.callSellPrice}}</view>
+          <view class="price price2" style="width: 160rpx;background:rgba(239,241,243,1);text-align:center;">{{item.exercisePrice}}</view>
+          <view class="price price3" style="">{{item.putBuyPrice}}</view>
+          <view class="price price4" style="">{{item.putSellPrice}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="remark">{{remark ? remark : ''}}</view>

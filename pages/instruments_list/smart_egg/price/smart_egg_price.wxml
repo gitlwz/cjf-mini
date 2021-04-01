@@ -1,0 +1,96 @@
+<view class="contract-line">
+  <view class="line-container">
+    <view class="jam-filter">
+      <view class="area-selece-filter">
+        <view class="area-selece-filter-title">地点</view>
+        <picker data-pickname="stableAddress" bindchange="bindPickerChange" value="{{stableAddressIndex}}" range="{{addressArray}}" range-key="name">
+          <view class="area-select-area">
+            <view class="area-select-area-name">{{addressArray[stableAddressIndex].name}}</view>
+            <image class="area-filter-icon" src="../../../../images/arrow_down_instrument.jpg" />
+          </view>
+        </picker>
+      </view>
+      <group-date class="group-date-filter" startDate="{{ stableParameters.startDate }}" endDate="{{ stableParameters.endDate }}" id="group-date-stable" bind:handleDateChange="handDateChange" />
+    </view>
+    <view class="line-top-container">
+      <view class="line-top-title-part">
+        <text class="line-title">现货价格的稳定性分析</text>
+        <image data-landscape="stable" bindtap="changeDirection" src="/images/land_scape.png" class="land-scape-image" />
+      </view>
+      <view class="line-legend-parent-container">
+        <view class="line-legend-container" wx:for="{{priceLegend}}" wx:key="index">
+          <view class="line-legend-line" style="background-color:{{item.fill}};"></view>
+          <text class="line-legend-name">{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="line">
+      <ff-canvas wx:if='{{stableNoData === 1}}' id="line-dom-stable" canvas-id="line" opts="{{ stableOpts }}"></ff-canvas>
+      <view class="no-data-container" wx:else>
+        <image src="/images/noContent.png" class="no-content"></image>
+        <view class="no-data">{{stableNoData === 2 ? '该条件下无数据' : '接口异常,请联系管理员处理'}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="line-container" style="margin-top: 10rpx;">
+    <view class="jam-filter">
+      <view class="area-selece-filter">
+        <view class="area-selece-filter-title">合约</view>
+        <picker data-pickname="chartType" bindchange="bindPickerChange" value="{{chartTypeIndex}}" range="{{chartTypeArray}}" range-key="name">
+          <view class="area-select-area">
+            <view class="area-select-area-name">{{chartTypeArray[chartTypeIndex].name}}</view>
+            <image class="area-filter-icon" src="../../../../images/arrow_down_instrument.jpg" />
+          </view>
+        </picker>
+      </view>
+      <view class="area-selece-filter" wx:if='{{chartTypeIndex===0}}'>
+        <view class="area-selece-filter-title">地点</view>
+        <picker data-pickname="seasonAddress" bindchange="bindPickerChange" value="{{seasonAddressIndex}}" range="{{addressArray}}" range-key="name">
+          <view class="area-select-area">
+            <view class="area-select-area-name">{{addressArray[seasonAddressIndex].name}}</view>
+            <image class="area-filter-icon" src="../../../../images/arrow_down_instrument.jpg" />
+          </view>
+        </picker>
+      </view>
+      <view class="area-selece-filter" wx:if='{{chartTypeIndex===1}}'>
+        <view class="area-selece-filter-title">交割月</view>
+        <picker data-pickname="deliverMonth" bindchange="bindPickerChange" value="{{deliveryMonthIndex}}" range="{{deliveryMonth}}" range-key="name">
+          <view class="area-select-area">
+            <view class="area-select-area-name">{{deliveryMonth[deliveryMonthIndex].name}}</view>
+            <image class="area-filter-icon" src="../../../../images/arrow_down_instrument.jpg" />
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="line-top-container">
+      <view class="line-top-title-part">
+        <text class="line-title">期(现)货价格季节性分析</text>
+        <image data-landscape="season" bindtap="changeDirection" src="/images/land_scape.png" class="land-scape-image" />
+      </view>
+    </view>
+    <view class="line">
+      <ff-canvas wx:if='{{seasonNoData === 1}}' id="line-dom-season" canvas-id="line2" opts="{{ seasonOpts }}"></ff-canvas>
+      <view class="no-data-container" wx:else>
+        <image src="/images/noContent.png" class="no-content"></image>
+        <view class="no-data">{{seasonNoData === 2 ? '该条件下无数据' : '接口异常,请联系管理员处理'}}</view>
+      </view>
+    </view>
+  </view>
+
+
+  <scroll-view scroll-x="true" scroll-y="false" class="table-container">
+    <view class="table">
+      <view class="table-tr table-header">
+        <view class='table-th'>年份</view>
+        <view wx:for="{{tableHeader}}" class='table-th {{item == "十二月" ? "th-end" : ""}}' wx:key="item">{{item}}</view>
+      </view>
+      <view wx:for="{{spotTableData}}" wx:for-item='year_data_list' wx:if="{{spotTableData.length}}" wx:for-index="bindex" class='table-tr {{ bindex == spotTableData.length-1 ? "table-tr-end" : ""}}' wx:key='bindex'>
+        <view class="line-legend-container table-tcolumn-first">
+          <view wx:if="{{monthDicLegend[year_data_list.year]}}" class="line-legend-line" style="background-color:{{monthDicLegend[year_data_list.year]}};"></view>
+          <text class="line-legend-name" style="color:{{monthDicLegend[year_data_list.year]}};">{{year_data_list.year}}</text>
+        </view>
+        <view wx:for="{{year_data_list.dataList}}" wx:for-item='month_data' style="color:{{month_data.chg > 0 ? '#E8684A' : '#03C389'}};" class='table-td {{month_data.month == "十二月" ? "th-end" : ""}}' wx:key="index">{{month_data.chg ? month_data.chg + '%': '--'  }}</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

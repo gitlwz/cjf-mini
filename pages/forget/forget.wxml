@@ -1,0 +1,25 @@
+<!--pages/forget/forget.wxml-->
+<navbar parameter="{{navdata}}" />
+<view style='margin-top:{{navH}}rpx;padding: 0 30rpx;height:{{contentH}}px;width: 100%;background: #fff;'>
+<view>
+  <view class="row">
+    <view class="title">手机号码</view>
+    <input type="number" maxlength="11" style="flex:1;height:110rpx;" placeholder="请输入有效手机号" data-type="tel" bind:input="onInput"/>
+    <view class="unCode" wx:if="{{sendCode}}">{{time}}s后重新获取</view>
+    <view class="sendCode" wx:else bindtap="getCode">获取验证码</view>
+  </view>
+  <view class="row">
+    <view class="title">验证码</view>
+    <input type="number"  focus="{{focus}}" style="flex:1;height:110rpx;" placeholder="请输入6位验证码" data-type="code" bind:input="onInput" maxlength='6'/>
+  </view>
+  <view class="row">
+    <view class="title">新密码</view>
+    <input type="password" maxlength="16" style="flex:1;height:110rpx;" placeholder="请设置登录密码" data-type="password" bind:input="onInput"/>
+  </view>
+  <view class="row">
+    <view class="title">确认密码</view>
+    <input style="flex:1;height:110rpx;" maxlength="16" placeholder="请确认登录密码" type="password" data-type="repassword" bind:input="onInput"/>
+  </view>
+</view>
+<button class="confirm bubble" disabled="{{disabled}}" style="opacity: {{disabled ? 0.4 : 1}}; color: #fff;" bindtap="onConfirm">确定</button>
+</view>

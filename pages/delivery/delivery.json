@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "navbar": "/components/navbar/index",
+    "list-view": "/components/list-view/list",
+    "jd-rich-text": "/components/jd-rich-text/index",
+    "delivery-item": "deliveryItem/deliveryItem"
+  },
+  "disableScroll": true
+}

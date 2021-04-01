@@ -1,0 +1,77 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/instruments_list/index",
+    "pages/showInfo/showInfo",
+    "pages/user/index",
+    "pages/login/login",
+    "pages/contract_list/index",
+    "pages/contract_details/index",
+    "pages/contract_line/index",
+    "pages/news_list/index",
+    "pages/forget/forget",
+    "pages/register/register",
+    "pages/register/agreement/index",
+    "pages/message/message",
+    "pages/upLoad/upLoad",
+    "pages/goods/index",
+    "pages/order/index",
+    "pages/news_details/index",
+    "pages/user_detail/index",
+    "pages/delivery_detail/deliveryDetail",
+    "pages/delivery/delivery",
+    "pages/simulatedDelivery/attentionItems/attentionItems",
+    "pages/simulatedDelivery/simulatedDelivery",
+    "pages/simulatedDelivery/vehicleDeliverySaller/vehicleDeliverySaller",
+    "pages/landscape_line/jam/jam",
+    "pages/landscape_line/contract/contract",
+    "pages/landscape_line/basic/basic",
+    "pages/landscape_line/delay/delay",
+    "pages/landscape_line/stable/stable",
+    "pages/landscape_line/season/season",
+    "pages/landscape_line/feed/feed"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "color": "#999999",
+    "selectedColor": "#333333",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/tab_home_normal.png",
+        "selectedIconPath": "images/tab_home_selected.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/instruments_list/index",
+        "iconPath": "images/tab_ins_noraml.png",
+        "selectedIconPath": "images/tab_ins_selected.png",
+        "text": "行情"
+      },
+      {
+        "pagePath": "pages/news_list/index",
+        "iconPath": "images/tab_news_normal.png",
+        "selectedIconPath": "images/tab_news_selected.png",
+        "text": "资讯"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "iconPath": "images/tab_user_normal.png",
+        "selectedIconPath": "images/tab_user_selected.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 30000,
+    "downloadFile": 30000
+  },
+  "sitemapLocation": "sitemap.json"
+}

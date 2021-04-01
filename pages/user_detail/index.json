@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "navbar": "/components/navbar/index",
+    "van-loading": "vant-weapp/loading/index",
+    "jd-rich-text": "/components/jd-rich-text/index"
+  }
+}

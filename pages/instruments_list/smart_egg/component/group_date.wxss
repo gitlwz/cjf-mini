@@ -1,0 +1,53 @@
+.group-date-picker {
+  flex: 1;
+  height: 56rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: space-between; */
+  background-color: #f2f6f7;
+  border-radius: 4px;
+}
+
+.group-date-picker-picker-container {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.group-date-picker-picker {
+  /* width: 175rpx; */
+  height: 100%;
+  font-size: 24rpx;
+  color: #333;
+  text-align: center;
+}
+
+.group-date-picker-startDate {
+  /* margin-right: 18rpx; */
+}
+
+.group-date-picker-endDate {
+  /* margin-left: 18rpx;
+  margin-right: 30rpx; */
+}
+.calender-icon {
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 20rpx
+}
+
+
+.group-date-picker-landscape{
+  height: 31rpx !important;
+}
+.group-date-picker-picker-landscape{
+  font-size: 15rpx !important;
+}
+.calender-icon-landscape {
+  width: 16rpx !important;
+  height: 16rpx !important;
+  margin-right: 17rpx !important;
+}

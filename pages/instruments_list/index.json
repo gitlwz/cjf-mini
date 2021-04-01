@@ -1,0 +1,17 @@
+{
+  "enablePullDownRefresh": false,
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "navbar": "/components/navbar/index",
+    "list-view": "/components/list-view/list",
+    "van-tab": "../../miniprogram_npm/vant-weapp/tab/index",
+    "van-tabs": "../../miniprogram_npm/vant-weapp/tabs/index",
+    "submit-need": "submitNeed/submitNeed",
+    "market-price": "marketPrice/marketPrice",
+    "interval": "interval/interval",
+    "smart-egg-price": "smart_egg/price/smart_egg_price",
+    "smart-egg-limit": "smart_egg/timeLimit/smart_egg_limit",
+    "smart-egg": "smart_egg/smart_egg",
+    "egg-fusion": "eggFusion/eggFusion"
+  }
+}
